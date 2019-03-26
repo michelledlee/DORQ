@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Meteor } from "meteor/meteor";
 import { Link } from "react-router-dom";
 import NavBar from "./NavBar.jsx";
+import Register from "./Register.jsx";
 
 import { withTracker } from "meteor/react-meteor-data";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
