@@ -3,6 +3,7 @@ import { Meteor } from "meteor/meteor";
 import { Link } from "react-router-dom";
 import NavBar from "./NavBar.jsx";
 import Register from "./Register.jsx";
+import Login from "./Login.jsx";
 
 import { withTracker } from "meteor/react-meteor-data";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -42,6 +43,8 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={HomeComponent} />
             <Route exact path="/about" component={AboutComponent} />
+            <Route exact path="/register" component={Register} />
+            <Route exact path="/login" component={Login} />
             <Route component={NotFoundPage} />
           </Switch>
           <br />

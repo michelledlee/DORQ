@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import AccountsUIWrapper from "./AccountsUIWrapper.jsx";
 
-export default class NavBar extends Component {
+export default class Register extends Component {
   constructor(props) {
     super(props);
 
@@ -19,19 +19,22 @@ export default class NavBar extends Component {
   onSubmit = e => {
     e.preventDefault();
 
+    console.log(this.password.value);
+    console.log(this.password2.value);
     // check password is valid
-    if (this.password === this.password2) {
+    if (this.password.value === this.password2.value) {
       // set the user avatar
-      let avatarURL = "https://robohash.org/" + "username"
+      let avatarURL = "https://robohash.org/" + this.name.value
 
       // our info all in one object
       let userData = {
-        username: this.name,
-        email: this.email,
-        password: this.password,
+        username: this.name.value,
+        email: this.email.value,
+        password: this.password.value,
         profile: {
-          avatar: this.avatar,
-          role: this.role
+          avatar: avatarURL,
+          role: this.role.value,
+          group: "unmatched"
         }
      }
 
