@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Register from "./Register.jsx";
 
-import AccountsUIWrapper from "./AccountsUIWrapper.jsx";
-
 export default class NavBar extends Component {
   render() {
     return (
@@ -35,7 +33,6 @@ export default class NavBar extends Component {
                 <Link to="/about">About</Link>
               </li>
             </ul>
-            <AccountsUIWrapper />
             {Meteor.user() ? (
               <Link to="/" onClick={Meteor.logout()}>
                 Logout

@@ -15,8 +15,15 @@ export default class Login extends Component {
 
   onSubmit = e => {
     e.preventDefault();
-    Meteor.loginWithPassword(this.name, this.password);
-    
+    Meteor.loginWithPassword(this.name.value, this.password.value, function(error) {
+      
+      if (error) {
+        console.log(error);
+      } else {
+        console.log(Meteor.user());
+      }
+    });
+
   }
 
   render() {
@@ -66,7 +73,7 @@ export default class Login extends Component {
                     type="submit"
                     className="btn btn-lg btn-primary btn-block text-uppercase"
                   >
-                    Sign up
+                    Login
                   </button>
                 </form>
               </div>
