@@ -2,8 +2,6 @@ import React, { Component } from "react";
 
 import { Link } from "react-router-dom";
 
-import AccountsUIWrapper from "./AccountsUIWrapper.jsx";
-
 export default class Register extends Component {
   constructor(props) {
     super(props);
@@ -23,25 +21,46 @@ export default class Register extends Component {
     console.log(this.password2.value);
     // check password is valid
     if (this.password.value === this.password2.value) {
+
       // set the user avatar
-      let avatarURL = "https://robohash.org/" + this.name.value
+      let avatarURL = "https://api.adorable.io/avatars/285/" + this.name.value
 
-      // our info all in one object
-      let userData = {
-        username: this.name.value,
-        email: this.email.value,
-        password: this.password.value,
-        profile: {
-          avatar: avatarURL,
-          role: this.role.value,
-          group: "unmatched"
+      // if the person is a DM
+      if (this.role.value === "Dungeon Master") {
+        // start a group
+        let groupIDrand = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 10);
+        
+        // our info all in one object
+        let userData = {
+          username: this.name.value,
+          email: this.email.value,
+          password: this.password.value,
+          profile: {
+            avatar: avatarURL,
+            role: this.role.value,
+            groupID: groupIDrand
+          }
         }
-     }
 
+      }
 
+      // they are not a DM, use default profile 
+      // our info all in one object
+        let userData = {
+          username: this.name.value,
+          email: this.email.value,
+          password: this.password.value,
+          profile: {
+            avatar: avatarURL,
+            role: this.role.value,
+            groupID: ""
+          }
+        }
     Accounts.createUser(userData, function(error) {
         if (Meteor.user()) {
            console.log(Meteor.userId());
+
+           // redirect to dashboard
         } else {
            console.log("err: " + error.reason);
         }
@@ -117,7 +136,7 @@ export default class Register extends Component {
                   <select 
                     className="form-control" 
                     id="optionsselect"
-                    ref={input => (this.selecteditem = input)}>
+                    ref={input => (this.role = input)}>
                     <option>Barbarian</option>
                     <option>Bard</option>
                     <option>Cleric</option>

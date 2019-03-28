@@ -1,12 +1,15 @@
 import React, { Component } from "react";
 import { Meteor } from "meteor/meteor";
 import { Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { withTracker } from "meteor/react-meteor-data";
+
 import NavBar from "./NavBar.jsx";
 import Register from "./Register.jsx";
 import Login from "./Login.jsx";
+import Dashboard from "./Dashboard.jsx";
 
-import { withTracker } from "meteor/react-meteor-data";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
 
 const HomeComponent = () => {
   return (
@@ -45,6 +48,7 @@ class App extends Component {
             <Route exact path="/about" component={AboutComponent} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
+            <Route exact path="/dashboard" component={Dashboard} />
             <Route component={NotFoundPage} />
           </Switch>
           <br />
