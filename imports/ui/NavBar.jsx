@@ -6,7 +6,7 @@ export default class NavBar extends Component {
   render() {
     return (
       <div>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
           <a className="navbar-brand" href="#">
             DORQ
           </a>

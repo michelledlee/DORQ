@@ -10,13 +10,26 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 const HomeComponent = () => {
   return (
-    <div>
+  <div>
+  <header className="masthead" style={{  backgroundImage: "url(" + "img/dice.jpg" + ")" }}>
+    <div className="overlay"></div>
+    <div className="container">
+      <div className="row">
+        <div className="col-lg-8 col-md-10 mx-auto">
+          <div className="site-heading">
+            <h1>DORQ</h1>
+            <span className="subheading">aka d&d&me</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
       {Meteor.user() ? <p>sugma</p> : <p>ligma</p>}
       <p className="text-muted small mb-0">
         Copyright &copy; DORQ 2019
       </p>
     </div>
-  );
+    );
 };
 
 const AboutComponent = () => (
