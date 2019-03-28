@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Meteor } from "meteor/meteor";
 import { Link } from "react-router-dom";
 import Register from "./Register.jsx";
 

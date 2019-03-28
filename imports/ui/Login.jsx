@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 
 import { Link } from "react-router-dom";
-
-import AccountsUIWrapper from "./AccountsUIWrapper.jsx";
+import { Redirect } from "react-router-dom";
 
 export default class Login extends Component {
   constructor(props) {
@@ -27,6 +26,7 @@ export default class Login extends Component {
   }
 
   render() {
+    if (Meteor.user()) return <Redirect to="/dashboard" user={Meteor.user()}/>;
     return (
        <div className="container">
         <div className="row">
