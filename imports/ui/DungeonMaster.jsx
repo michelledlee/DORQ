@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Meteor } from "meteor/meteor";
+import { withTracker } from "meteor/react-meteor-data";
 
 import BuildParty from "./BuildParty.jsx";
 
-export default class DungeonMaster extends Component {
+class DungeonMaster extends Component {
   constructor(props) {
     super(props);
 
@@ -37,3 +38,9 @@ export default class DungeonMaster extends Component {
       );
   }
 }
+
+export default withTracker(() => {
+  return {
+    user: Meteor.user()
+  };
+})(DungeonMaster);

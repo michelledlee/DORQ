@@ -1,8 +1,10 @@
 import React, { Component } from "react";
-
+import { withTracker } from "meteor/react-meteor-data";
+import { Accounts } from "meteor/accounts-base";
 import { Link } from "react-router-dom";
+import { Meteor } from "meteor/meteor";
 
-export default class Register extends Component {
+class Register extends Component {
   constructor(props) {
     super(props);
 
@@ -17,8 +19,6 @@ export default class Register extends Component {
   onSubmit = e => {
     e.preventDefault();
 
-    console.log(this.password.value);
-    console.log(this.password2.value);
     // check password is valid
     if (this.password.value === this.password2.value) {
 
@@ -33,7 +33,7 @@ export default class Register extends Component {
         // our info all in one object
         let userData = {
           username: this.name.value,
-          email: this.email.value,
+          // email: this.email.value,
           password: this.password.value,
           profile: {
             avatar: avatarURL,
@@ -48,7 +48,7 @@ export default class Register extends Component {
       // our info all in one object
         let userData = {
           username: this.name.value,
-          email: this.email.value,
+          // email: this.email.value,
           password: this.password.value,
           profile: {
             avatar: avatarURL,
@@ -174,3 +174,9 @@ export default class Register extends Component {
     );
   }
 }
+
+export default withTracker(() => {
+  return {
+    user: Meteor.user()
+  };
+})(Register);
