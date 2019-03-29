@@ -27,10 +27,12 @@ const HomeComponent = () => {
       </div>
     </div>
   </header>
+  <div className="container">
       {Meteor.user() ? <p>sugma</p> : <p>ligma</p>}
       <p className="text-muted small mb-0">
         Copyright &copy; DORQ 2019
       </p>
+    </div>
     </div>
     );
 };

@@ -86,7 +86,7 @@ export default class Register extends Component {
                 <h5 className="card-title">Register</h5>
 
                 <p className="grey-text text-darken-1">
-                  Already have an account? <p><Link to="/login">Log in</Link></p>
+                  Already have an account? <Link to="/login">Log in</Link>
                 </p>
                 <form
                   className="form-signin"
