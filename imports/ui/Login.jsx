@@ -1,15 +1,20 @@
 import React, { Component } from "react";
-
+import { withTracker } from "meteor/react-meteor-data";
+import PropTypes from "prop-types";
+import { Meteor } from "meteor/meteor";
 import { Link } from "react-router-dom";
 import { Redirect } from "react-router-dom";
+import { Accounts } from "meteor/accounts-base";
 
-export default class Login extends Component {
+
+class Login extends Component {
   constructor(props) {
     super(props);
 
     this.name = "";
     this.password = "";
     this.onSubmit = this.onSubmit.bind(this);
+
   }
 
   onSubmit = e => {
@@ -82,3 +87,9 @@ export default class Login extends Component {
     );
   }
 }
+
+export default withTracker(() => {
+  return {
+    user: Meteor.user()
+  };
+})(Login);

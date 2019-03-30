@@ -9,23 +9,24 @@ import DungeonMaster from "./DungeonMaster.jsx";
 import PartyMember from "./PartyMember.jsx";
 
 
-export default class Dashboard extends Component {
+class Dashboard extends Component {
   constructor(props) {
     super(props);
 
-    // this.name = this.props.user.username;
-    // this.avatar = this.props.user.profile.avatar;
-    // this.role = this.props.user.profile.role;
+    this.name = "";
+    this.avatar = "";
+    this.role = "";
 
     console.log(props);
     console.log(Meteor.user());
+    // this.user = Meteor.user();
   }
 
   // componentDidMount() {
-  //   if (Meteor.user()) {
-  //     this.name = Meteor.user().username;
-  //     this.avatar = Meteor.user().profile.avatar;
-  //     this.role = Meteor.user().profile.role;
+  //   if (Meteor.userId()) {
+  //     this.name = this.user.username;
+  //     // this.avatar = Meteor.user().profile.avatar;
+  //     // this.role = Meteor.user().profile.role;
   //   }
   // }
 
@@ -36,7 +37,7 @@ export default class Dashboard extends Component {
       <div style={{ height: "75vh" }} className="container valign-wrapper">
       <div className="row">
       <div className="col s12 center-align" style={{padding:"100px"}}>
-      <h4><b>Hey there, {this.name}</b>!</h4>
+      <h4><b>Hey there, {Meteor.user() ? Meteor.user().username : "lllskdj" }</b>!</h4>
       <p className="flow-text grey-text text-darken-1">
       Welcome to your DORQ homepage! 
       </p>
@@ -52,3 +53,9 @@ export default class Dashboard extends Component {
 Dashboard.propTypes = {
   user: PropTypes.object
 };
+
+export default withTracker(() => {
+  return {
+    user: Meteor.user()
+  };
+})(Dashboard);

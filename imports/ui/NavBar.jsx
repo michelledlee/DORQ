@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Meteor } from "meteor/meteor";
 import { Link } from "react-router-dom";
+import { withTracker } from "meteor/react-meteor-data";
+
 import Register from "./Register.jsx";
 
 export default class NavBar extends Component {
@@ -32,6 +34,9 @@ export default class NavBar extends Component {
               </li>
               <li className="nav-item">
                 <Link to="/about">About</Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/dashboard">Dashboard</Link>
               </li>
             </ul>
             {Meteor.user() ? (

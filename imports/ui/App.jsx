@@ -1,14 +1,15 @@
 import React, { Component } from "react";
 import { Meteor } from "meteor/meteor";
 import { Link } from "react-router-dom";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import { withTracker } from "meteor/react-meteor-data";
+import PropTypes from "prop-types";
+
 
 import NavBar from "./NavBar.jsx";
 import Register from "./Register.jsx";
 import Login from "./Login.jsx";
 import Dashboard from "./Dashboard.jsx";
-
 
 
 const HomeComponent = () => {
@@ -106,7 +107,37 @@ const NotFoundPage = () => (
   </div>
 );
 
-class App extends Component {
+// function PrivateRoute({ component: Component, ...rest }) {
+//   return (
+//     <Route
+//       {...rest}
+//       render={props =>
+//         Meteor.user() ? (
+//           <Component {...props} />
+//         ) : (
+//           <Redirect
+//             to={{
+//               pathname: "/login",
+//               state: { from: props.location }
+//             }}
+//           />
+//         )
+//       }
+//     />
+//   );
+// }
+
+// PrivateRoute.propTypes = {
+//   component: PropTypes.func,
+//   location: PropTypes.object
+// };
+
+
+export default class App extends Component {
+  // constructor(props) {
+  //   super(props);
+  // }
+
   render() {
     return (
       <Router>
@@ -127,8 +158,17 @@ class App extends Component {
   }
 }
 
-export default withTracker(() => {
-  return {
-    user: Meteor.user()
-  };
-})(App);
+// App.propTypes = {
+//   user: PropTypes.object,
+//   loggedIn: PropTypes.bool
+// };
+
+// export default withTracker(() => {
+//   const user = Meteor.user();
+//   const userDataAvailable = user !== undefined;
+//   const loggedIn = user && userDataAvailable;
+//   return {
+//     user: user,
+//     loggedIn: loggedIn
+//   };
+// })(App);

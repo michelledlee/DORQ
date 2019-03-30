@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Meteor } from "meteor/meteor";
+import { withTracker } from "meteor/react-meteor-data";
 
-export default class PartyMember extends Component {
+
+class PartyMember extends Component {
   constructor(props) {
     super(props);
 
@@ -34,3 +36,9 @@ export default class PartyMember extends Component {
       );
   }
 }
+
+export default withTracker(() => {
+  return {
+    user: Meteor.user()
+  };
+})(PartyMember);

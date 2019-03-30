@@ -2,9 +2,11 @@ import React, { Component } from "react";
 import { Meteor } from "meteor/meteor";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import { withTracker } from "meteor/react-meteor-data";
 
 
-export default class BuildParty extends Component {
+
+class BuildParty extends Component {
   constructor(props) {
     super(props);
 
@@ -74,4 +76,11 @@ export default class BuildParty extends Component {
 
 BuildParty.propTypes = {
   groupID: PropTypes.string
-};
+}
+
+
+export default withTracker(() => {
+  return {
+    user: Meteor.user()
+  };
+})(BuildParty);
