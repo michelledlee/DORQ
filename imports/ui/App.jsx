@@ -71,10 +71,12 @@ const RegisterComponent = () => (
       </div>
     </div>
   </header>
+  <div className="container">
       <Register />
-    <p className="text-muted small mb-0">
-      Copyright &copy; DORQ 2019
-    </p>
+        <p className="text-muted small mb-0">
+          Copyright &copy; DORQ 2019
+        </p>
+    </div>
   </div>
 );
 
@@ -92,10 +94,35 @@ const LoginComponent = () => (
       </div>
     </div>
   </header>
-      <Login />
-    <p className="text-muted small mb-0">
+  <div className="container">
+    <Login />
+      <p className="text-muted small mb-0">
       Copyright &copy; DORQ 2019
-    </p>
+      </p>
+    </div>
+  </div>
+);
+
+const DashboardComponent = () => (
+  <div>
+    <header className="masthead-baby" style={{  backgroundImage: "url(" + "img/dice-narrow.jpg" + ")" }}>
+    <div className="overlay"></div>
+    <div className="container">
+      <div className="row">
+        <div className="col-lg-8 col-md-10 mx-auto">
+          <div className="site-heading">
+            <span className="subheading">DASHBOARD</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div className="container">
+    <Dashboard />
+      <p className="text-muted small mb-0">
+      Copyright &copy; DORQ 2019
+      </p>
+    </div>
   </div>
 );
 
@@ -148,7 +175,7 @@ export default class App extends Component {
             <Route exact path="/about" component={AboutComponent} />
             <Route exact path="/register" component={RegisterComponent} />
             <Route exact path="/login" component={LoginComponent} />
-            <Route exact path="/dashboard" component={Dashboard} />
+            <Route exact path="/dashboard" component={DashboardComponent} />
             <Route component={NotFoundPage} />
           </Switch>
           <br />

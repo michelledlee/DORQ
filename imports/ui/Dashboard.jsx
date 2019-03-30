@@ -34,9 +34,9 @@ class Dashboard extends Component {
   render() {
     return (
       <div>
-      <div style={{ height: "75vh" }} className="container valign-wrapper">
+      <div className="container valign-wrapper">
       <div className="row">
-      <div className="col s12 center-align" style={{padding:"100px"}}>
+      <div className="col s12 center-align">
       <h4><b>Hey there, {Meteor.user() ? Meteor.user().username : "lllskdj" }</b>!</h4>
       <p className="flow-text grey-text text-darken-1">
       Welcome to your DORQ homepage! 
