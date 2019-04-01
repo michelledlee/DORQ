@@ -5,23 +5,21 @@ import PropTypes from "prop-types";
 import { withTracker } from "meteor/react-meteor-data";
 
 
-
+// This class adds party members to an existing party
 class BuildParty extends Component {
   constructor(props) {
     super(props);
 
-    this.id = this.props.groupID;
-    this.quantity = "";
+    this.id = Meteor.user().profile.groupID;
+    this.playerID = Meteor.user()._id;
     this.onSubmit = this.onSubmit.bind(this);
   }
 
   onSubmit = e => {
     event.preventDefault();
-    this.quantity = this.amount.value;
-    console.log(iteminfo);
 
-    let data = { partyID: this.id, size: this.quantity };
-    Meteor.call("parties.insert", data, (err, res) => {
+    let data = { partyID: this.id, playerID: this.playerID.value };
+    Meteor.call("parties.addplayer", data, (err, res) => {
       if (err) {
         alert("There was error inserting check the console");
         console.log(err);
@@ -42,12 +40,12 @@ class BuildParty extends Component {
           noValidate
           onSubmit={this.onSubmit.bind(this)}
         >
-          <label htmlFor="amount">Amount</label>
+          <label htmlFor="playerID">Player ID</label>
           <input
-            id="amount"
-            type="number"
+            id="playerID"
+            type="text"
             min="0"
-            ref={input => (this.amount = input)}
+            ref={input => (this.playerID = input)}
           />
           <div className="make-center">
             <button
@@ -60,7 +58,7 @@ class BuildParty extends Component {
               type="submit"
               className="btn btn-lg btn-primary btn-block text-uppercase"
             >
-              Form Party
+              Add Adventurer!
             </button>
           </div>
         </form>

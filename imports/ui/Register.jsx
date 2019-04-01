@@ -25,28 +25,31 @@ class Register extends Component {
       // set the user avatar
       let avatarURL = "https://api.adorable.io/avatars/285/" + this.name.value
 
+      let userData; 
+
       // if the person is a DM
       if (this.role.value === "Dungeon Master") {
         // start a group
         let groupIDrand = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 10);
         
         // our info all in one object
-        let userData = {
+        userData = {
           username: this.name.value,
           // email: this.email.value,
           password: this.password.value,
           profile: {
             avatar: avatarURL,
             role: this.role.value,
-            groupID: groupIDrand
+            groupID: groupIDrand,
+            members: [String]
           }
         }
 
-      }
+      } else {
 
       // they are not a DM, use default profile 
       // our info all in one object
-        let userData = {
+        userData = {
           username: this.name.value,
           // email: this.email.value,
           password: this.password.value,
@@ -56,6 +59,8 @@ class Register extends Component {
             groupID: ""
           }
         }
+      }
+      
     Accounts.createUser(userData, function(error) {
         if (Meteor.user()) {
            console.log(Meteor.userId());

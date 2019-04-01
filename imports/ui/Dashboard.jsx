@@ -41,7 +41,7 @@ class Dashboard extends Component {
       <p className="flow-text grey-text text-darken-1">
       Welcome to your DORQ homepage! 
       </p>
-      {this.role === "Dungeon Master" ? <DungeonMaster /> : <PartyMember />}
+      {Meteor.user().profile.role === "Dungeon Master" ? <DungeonMaster /> : <PartyMember />}
       </div>
       </div>
       </div>

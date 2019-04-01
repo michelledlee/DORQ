@@ -15,14 +15,14 @@ class DungeonMaster extends Component {
     this.groupNo = "";
   }
 
-  componentDidMount() {
-    if (Meteor.user()) {
-      this.name = Meteor.user().username;
-      this.avatar = Meteor.user().profile.avatar;
-      this.role = Meteor.user().profile.role;
-      this.groupNo = Meteor.user().profile.groupID;
-    }
-  }
+  // componentDidMount() {
+  //   if (Meteor.user()) {
+  //     this.name = Meteor.user().username;
+  //     this.avatar = Meteor.user().profile.avatar;
+  //     this.role = Meteor.user().profile.role;
+  //     this.groupNo = Meteor.user().profile.groupID;
+  //   }
+  // }
 
   render() {
     return (
@@ -30,7 +30,7 @@ class DungeonMaster extends Component {
       <div style={{ height: "75vh" }} className="container valign-wrapper">
       <div className="row">
       <div className="col s12 center-align" style={{padding:"100px"}}>
-      {Meteor.user().profile.size === 0 ? <BuildParty id={this.groupNo} /> :  <p>normal profile</p>}
+      <BuildParty />
       </div>
       </div>
       </div>
