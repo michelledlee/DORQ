@@ -27,7 +27,9 @@ class DungeonMaster extends Component {
   render() {
     return (
       <div>
-      {Meteor.user().profile.size === 0 ? <BuildParty id={this.groupNo} /> :  <p>normal profile</p>}
+      <div className="row">
+      <BuildParty />
+      </div>
       </div>
       );
   }
