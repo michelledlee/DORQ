@@ -39,10 +39,9 @@ class Dashboard extends Component {
       <div className="row">
       <div className="col-lg-10 mx-auto">
       <h2>Hey there, {Meteor.user().username}!</h2>
-      <p>Welcome to your DORQ homepage! 
-      {this.role === "Dungeon Master" ? <DungeonMaster /> : <PartyMember />}
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed turpis magna, varius nec bibendum feugiat, efficitur at nisl. Donec id ullamcorper lorem. Nam efficitur pulvinar lorem. Vestibulum augue eros, blandit quis libero vitae, cursus sodales nibh. Nulla volutpat lorem odio, eget lobortis felis sodales sit amet. Suspendisse lacinia sit amet ante at porta. Fusce nec elit et est rhoncus pellentesque a ut magna. Sed sed orci eget lorem congue fermentum et nec nisi. </p>
+      {Meteor.user().profile.role === "Dungeon Master" ? <DungeonMaster /> : <PartyMember />}
       <PartyChat />
-      </p>
       </div>
       </div>
       </div>

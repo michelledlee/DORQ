@@ -15,19 +15,21 @@ class DungeonMaster extends Component {
     this.groupNo = "";
   }
 
-  componentDidMount() {
-    if (Meteor.user()) {
-      this.name = Meteor.user().username;
-      this.avatar = Meteor.user().profile.avatar;
-      this.role = Meteor.user().profile.role;
-      this.groupNo = Meteor.user().profile.groupID;
-    }
-  }
+  // componentDidMount() {
+  //   if (Meteor.user()) {
+  //     this.name = Meteor.user().username;
+  //     this.avatar = Meteor.user().profile.avatar;
+  //     this.role = Meteor.user().profile.role;
+  //     this.groupNo = Meteor.user().profile.groupID;
+  //   }
+  // }
 
   render() {
     return (
       <div>
-      {Meteor.user().profile.size === 0 ? <BuildParty id={this.groupNo} /> :  <p>normal profile</p>}
+      <div className="row">
+      <BuildParty />
+      </div>
       </div>
       );
   }

@@ -9,9 +9,9 @@ if (Meteor.isServer) {
   Meteor.publish("messages", function messagesPublish() {
     return Messages
       .find({}, {
-        limit: 10,
+        limit: 50,
         sort: {
-          createdAt: -1
+          createdAt: 1
         }
       });
   });

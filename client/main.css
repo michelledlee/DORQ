@@ -32,6 +32,11 @@ body {
   ;
 }
 
+#messages {
+  height: 20rem;
+  overflow: scroll;
+}
+
 header.masthead-baby {
   margin-bottom: 50px;
   background: no-repeat center center;

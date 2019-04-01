@@ -1,43 +1,10 @@
+import { Accounts } from "meteor/accounts-base";
 import { Mongo } from "meteor/mongo";
 import { Meteor } from "meteor/meteor";
 
-export const Parties = new Mongo.Collection("parties");
+export const Users = new Mongo.Collection("users");
 
-if (Meteor.isServer) {
-  Meteor.publish("parties", function eventsPublish() {
-    try {
-      return Parties.find(
-        {},
-        {
-          limit: 10,
-          sort: {
-            createdAt: -1
-          }
-        }
-      );
-    } catch (e) {
-      console.log(e);
-    }
-  });
-
-}
-
-// create a new party
-Meteor.methods({
-  "parties.createparty"(party) {
-    console.log("parties.createparty");
-
-    // create a new party for this DM
-    return Parties.insert({
-      masterID: party.DMID,
-      partyID: party.groupID,
-      partyName: party.name,
-      members: [String]
-    });
-  }
-});
-
-// add a member to a party
+// associate 
 Meteor.methods({
   "parties.addplayer"(party) {
      console.log("parties.addplayer")
@@ -75,19 +42,4 @@ Meteor.methods({
       { $set: {members: newMembersList} });
     }
 
-});
-
-// get all parties
-Meteor.methods({
-  "parties.get"() {
-    console.log("parties.get");
-
-    // Make sure the user is logged in before getting but do we actually care
-    if (!this.userId) {
-      console.log("this probably don't even matter");
-      throw new Meteor.Error("not-authorized");
-    }
-
-    return Parties.find({});
-  }
 });
