@@ -16,7 +16,7 @@ class PartyChat extends Component {
 
   renderMessages() {
     return this.props.messages.map(m =>
-      <div className="card" key={m._id}>{m.owner} : {m.message}</div>);
+      <div className="card" key={m._id}><b>{m.owner}:</b> {m.message}</div>);
   }
 
   onChange(evt) {
@@ -49,12 +49,13 @@ class PartyChat extends Component {
   render() {
     console.log("Messages", this.props.messages);
     return (
-      <div>
-        <h2>Messages</h2>
-        <div className="messsges">{this.renderMessages()}</div>
-        <h3>Enter a new message</h3>
+      <div className="container">
+        <div className="content-section-heading text-center">
+        <h2>Party Chat</h2>
+        </div>
+        <div id="messages">{this.renderMessages()}</div>
         <label htmlFor="inMessage">
-          Message:{" "}
+          Chat:{" "}
           <input
             className="form-control"
             type="text"
