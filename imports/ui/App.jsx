@@ -29,7 +29,9 @@ const HomeComponent = () => {
     </div>
   </header>
   <div className="container">
+        <div className="col-lg-10 mx-auto">
       {Meteor.user() ? <p>sugma</p> : <p>ligma</p>}
+        </div>
       <p className="text-muted small mb-0">
         Copyright &copy; DORQ 2019
       </p>
@@ -51,7 +53,9 @@ const AboutComponent = () => (
     </div>
   </header>
   <div className="container">
-              <span className="subheading">About D&D & Me</span>
+        <div className="col-lg-10 mx-auto">
+    <h2>About D&D & Me</h2>
+        </div>
     <p className="text-muted small mb-0">
       Copyright &copy; DORQ 2019
     </p>
@@ -118,7 +122,8 @@ const DashboardComponent = () => (
     </div>
   </header>
   <div className="container">
-    <Dashboard />
+      {Meteor.user() ? <Dashboard /> : 
+        <p className="col-lg-10 mx-auto">You are not logged in.</p>}
       <p className="text-muted small mb-0">
       Copyright &copy; DORQ 2019
       </p>

@@ -27,13 +27,7 @@ class DungeonMaster extends Component {
   render() {
     return (
       <div>
-      <div style={{ height: "75vh" }} className="container valign-wrapper">
-      <div className="row">
-      <div className="col s12 center-align" style={{padding:"100px"}}>
       {Meteor.user().profile.size === 0 ? <BuildParty id={this.groupNo} /> :  <p>normal profile</p>}
-      </div>
-      </div>
-      </div>
       </div>
       );
   }

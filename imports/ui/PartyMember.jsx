@@ -26,11 +26,7 @@ class PartyMember extends Component {
   render() {
     return (
       <div>
-      <div style={{ height: "75vh" }} className="container valign-wrapper">
       <div className="row">
-      <div className="col s12 center-align" style={{padding:"100px"}}>
-      </div>
-      </div>
       </div>
       </div>
       );
