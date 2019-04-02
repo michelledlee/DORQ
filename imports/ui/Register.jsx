@@ -12,6 +12,7 @@ class Register extends Component {
     this.password = "";
     this.password2 = "";
     this.avatar = "";
+    this.charname = "";
     this.role = "";
     this.onSubmit = this.onSubmit.bind(this);
   }
@@ -46,8 +47,154 @@ class Register extends Component {
         }
 
       } else {
+        let expression = this.role.value;
+        let abilityStats;
+        // they are not a DM, use default profile
+        switch(expression) {
+          case "Barbarian":
+            abilityStats = {
+              strength: 3,
+              dexterity: 1,
+              constitution: 2,
+              intelligence: 1,
+              wisdom: 1,
+              charisma: 0,
+              hp: 14
+            }
+            break;
+          case "Bard":
+            abilityStats = {
+              strength: 1,
+              dexterity: 2,
+              constitution: 2,
+              intelligence: 1,
+              wisdom: 0,
+              charisma: 3,
+              hp: 10
+            }
+            break;
+          case "Cleric":
+            abilityStats = {
+              strength: 2,
+              dexterity: -1,
+              constitution: 2,
+              intelligence: 0,
+              wisdom: 3,
+              charisma: 1,
+              hp: 11
+            }
+            break;
+          case "Druid":
+            abilityStats = {
+              trength: 0,
+              dexterity: 1,
+              constitution: 3,
+              intelligence: -1,
+              wisdom: 5,
+              charisma: 2,
+              hp: 10
+            }
+            break;
+          case "Fighter":
+            abilityStats = {
+              strength: 3,
+              dexterity: -1,
+              constitution: 2,
+              intelligence: 0,
+              wisdom: 1,
+              charisma: 2,
+              hp: 12
+            }
+            break;
+          case "Monk":
+            abilityStats = {
+              strength: 1,
+              dexterity: 2,
+              constitution: 1,
+              intelligence: 0,
+              wisdom: 2,
+              charisma: 0,
+              hp: 9
+            }
+            break;
+          case "Paladin":
+            abilityStats = {
+              strength: 5,
+              dexterity: -1,
+              constitution: 2,
+              intelligence: 0,
+              wisdom: 1,
+              charisma: 2,
+              hp: 12
+            }
+            break;
+          case "Ranger":
+            abilityStats = {
+              strength: 1,
+              dexterity: 5,
+              constitution: 1,
+              intelligence: 0,
+              wisdom: 2,
+              charisma: 0,
+              hp: 9
+            }
+            break;
+          case "Rogue":
+            abilityStats = {
+              strength: -1,
+              dexterity: 3,
+              constitution: 1,
+              intelligence: 1,
+              wisdom: 0,
+              charisma: 3,
+              hp: 9
+            }
+          case "Sorceror":
+            abilityStats = {
+              strength: -1,
+              dexterity: 1,
+              constitution: 2,
+              intelligence: 0,
+              wisdom: 1,
+              charisma: 3,
+              hp: 8
+            }
+            break;       
+          case "Warlock":
+            abilityStats = {
+              strength: 0,
+              dexterity: 2,
+              constitution: 2,
+              intelligence: 3,
+              wisdom: 1,
+              charisma: -1,
+              hp: 8
+            }
+            break; 
+          case "Wizard":
+            abilityStats = {
+              strength: 0,
+              dexterity: 2,
+              constitution: 2,
+              intelligence: 3,
+              wisdom: 1,
+              charisma: -1,
+              hp: 8
+            }
+            break;
+          default:
+          abilityStats = {
+              strength: 1,
+              dexterity: 1,
+              constitution: 1,
+              intelligence: 1,
+              wisdom: 1,
+              charisma: 1,
+              hp: 9
+            }
+            break;
+        }
 
-      // they are not a DM, use default profile 
       // our info all in one object
         userData = {
           username: this.name.value,
@@ -56,7 +203,9 @@ class Register extends Component {
           profile: {
             avatar: avatarURL,
             role: this.role.value,
-            groupID: ""
+            groupID: "",
+            name: this.charname,
+            stats: abilityStats
           }
         }
       }
@@ -98,6 +247,7 @@ class Register extends Component {
                   noValidate
                   onSubmit={this.onSubmit}
                 >
+                <label>User Information</label>
                   <div className="form-label-group">
                     <label htmlFor="name">Name</label>
                     <input
@@ -134,6 +284,16 @@ class Register extends Component {
                       id="password2"
                       type="password"
                       ref={input => (this.password2 = input)}
+                    />
+                  </div>
+
+                <label>Character Basics</label>
+                  <div className="form-label-group">
+                    <label htmlFor="charname">Character Name</label>
+                    <input
+                      id="charname"
+                      type="text"
+                      ref={input => (this.charname = input)}
                     />
                   </div>
                   <div className="form-label-group">
