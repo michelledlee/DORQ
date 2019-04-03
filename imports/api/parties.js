@@ -45,7 +45,7 @@ Meteor.methods({
     //finds the party based on groupID
 
     console.log(party);
-    let partyDocument = Parties.findOne({ partyID: party.groupID });
+    let partyDocument = Parties.findOne({ partyID: party.partyID });
     console.log(partyDocument);
     let membersList = partyDocument.members;
     let newMembersList = membersList;
@@ -71,7 +71,7 @@ Meteor.methods({
 
     // adds the player to the members array based on their player ID
     newMembersList.push(party.playerID);
-    Parties.update({ partyID: party.groupID }, 
+    Parties.update({ partyID: party.partyID }, 
       { $set: {members: newMembersList} });
     }
 

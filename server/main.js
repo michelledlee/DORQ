@@ -3,6 +3,7 @@ import "../imports/api/messages.js";
 import "../imports/api/parties.js";
 
 import "../imports/api/parties.js";
+import "../imports/api/users.js";
 
 Meteor.startup(() => {
   // code to run on server at startup

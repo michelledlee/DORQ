@@ -18,8 +18,8 @@ class BuildParty extends Component {
   onSubmit = e => {
     event.preventDefault();
 
-    let data = { partyID: this.id, playerID: this.playerID.value };
-    Meteor.call("parties.addplayer", data, (err, res) => {
+    let data = { partyID: this.id, playerID: this.playerID.value, DMID: this.playerID };
+    Meteor.call("users.addplayer", data, (err, res) => {
       if (err) {
         alert("There was error inserting check the console");
         console.log(err);
