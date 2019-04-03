@@ -36,7 +36,7 @@ class Register extends Component {
         // our info all in one object
         userData = {
           username: this.name.value,
-          // email: this.email.value,
+          email: this.email.value,
           password: this.password.value,
           profile: {
             avatar: avatarURL,
@@ -198,13 +198,14 @@ class Register extends Component {
       // our info all in one object
         userData = {
           username: this.name.value,
-          // email: this.email.value,
+          email: this.email.value,
           password: this.password.value,
           profile: {
             avatar: avatarURL,
             role: this.role.value,
             groupID: "",
-            name: this.charname,
+            name: this.charname.value,
+            level: 1,
             stats: abilityStats
           }
         }

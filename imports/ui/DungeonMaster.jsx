@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Meteor } from "meteor/meteor";
+import PropTypes from "prop-types";
 import { withTracker } from "meteor/react-meteor-data";
 
 import BuildParty from "./BuildParty.jsx";
@@ -13,25 +14,70 @@ class DungeonMaster extends Component {
     this.avatar = "";
     this.role = "";
     this.groupNo = "";
+    this.onSubmit = this.onSubmit.bind(this);
+
+    this.state = {
+      partyMembers: []
+    };
+
   }
 
-  // componentDidMount() {
-  //   if (Meteor.user()) {
-  //     this.name = Meteor.user().username;
-  //     this.avatar = Meteor.user().profile.avatar;
-  //     this.role = Meteor.user().profile.role;
-  //     this.groupNo = Meteor.user().profile.groupID;
-  //   }
-  // }
+
+  getPartyPeople() {
+      Meteor.call("users.getMembers", this.id, (err, res) => {
+        if (err) {
+          alert("There was error inserting check the console");
+          console.log(err);
+          return;
+        }
+        this.setState({
+        partyMembers: res
+      });
+        console.log(res);
+      });
+  }
+
+  onSubmit() {
+    Template.twitterConnect.events({
+    'click span.connectTwitter' : function () {
+      Meteor.connectWithTwitter(options, function () {
+        console.log(arguments);
+      });
+    }
+  });
+  }
+
+  renderthePartyMembers() {
+    return this.state.partyMembers.map((m, j) => (
+      <div className="card col-4" key={m._id}>
+        <span>
+          <strong>Name:</strong> {m.profile.name}
+        </span>
+        <span>
+          <strong>Class:</strong> {m.profile.role}
+        </span>
+        <span>
+          <strong>Level:</strong> {m.profile.level}
+        </span>
+      </div>
+    ));
+  }
 
   render() {
     return (
       <div>
+      <div className="row">{this.renderthePartyMembers()}</div>
       <BuildParty />
+      <button onSubmit={this.onSubmit.bind(this)}>Click Me</button>
       </div>
       );
   }
 }
+
+DungeonMaster.propTypes = {
+  partyMembers: PropTypes.arrayOf(PropTypes.object)
+};
+
 
 export default withTracker(() => {
   return {

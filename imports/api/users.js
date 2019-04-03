@@ -7,14 +7,14 @@ import { Meteor } from "meteor/meteor";
 // update this user with a groupID 
 Meteor.methods({
   "users.addplayer"(ID) {
-     console.log("users.updategroup")
+     console.log("users.addplayer")
 
     //finds the party based on groupID
 
     console.log(ID);
     let dungeonMasterDoc = Meteor.users.findOne({ _id: ID.DMID});
     console.log(dungeonMasterDoc);
-    let membersList = dungeonMasterDoc.members;
+    let membersList = dungeonMasterDoc.profile.members;
     let newMembersList = membersList;
 
     let newMember = ID.playerID;
@@ -28,6 +28,12 @@ Meteor.methods({
       let currentMember = membersList[i];
       console.log("list member: " + currentMember);
 
+      if (currentMember === null) {
+        newMembersList[i] = newMember;
+        Meteor.users.update({ _id: ID.DMID }, { $set: {"profile.members": newMembersList} });
+        return;
+      }
+
       if (newMember === currentMember) {
         //  already in the list, do not add
         console.log("aLrEaDy AdDeD");
@@ -38,10 +44,29 @@ Meteor.methods({
 
     // adds the player to the members array based on their player ID
     newMembersList.push(ID.playerID);
+    console.log(newMembersList);
     // add player on dungeon master list
-    Meteor.users.update({ profile: {groupID: ID.partyID} }, 
-      { $set: {members: newMembersList} });
+    Meteor.users.update({ _id: ID.DMID }, 
+      { $set: {"profile.members": newMembersList} });
     }
-    // update the player's group ID
 
+});
+
+// update a player's group ID
+Meteor.methods({
+  "users.updateID"(ID) {
+     console.log("users.updateID")
+
+    Meteor.users.update({ _id: ID.playerID }, 
+      { $set: {"profile.groupID": ID.partyID} });
+    }
+
+});
+
+
+// get players in a party
+Meteor.methods({
+  "users.getMembers"(ID) {
+    return Meteor.users.find({"profile.groupID": ID.partyID});
+}
 });
