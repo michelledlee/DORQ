@@ -9,14 +9,23 @@ class PartyChat extends Component {
   constructor(props) {
     super(props);
 
+    this.id = Meteor.user().profile.groupID;
     this.state = {
-      message: ""
+      message: "",
     };
   }
 
   renderMessages() {
-    return this.props.messages.map(m =>
-      <div className="card" key={m._id}><b>{m.owner}:</b> {m.message}</div>);
+    return this.props.messages.map(m=>
+      <div className="card" key={m._id}><div>        
+      <img
+          className="icon bg-light rounded"
+          width="48"
+          height="48"
+          src={`https://api.adorable.io/avatars/48/${m.owner.toLowerCase()}@adorable.io.png`}
+          alt={m.owner}
+        />
+        <b>{m.owner}:</b> {m.message}</div></div>);
   }
 
   onChange(evt) {
@@ -71,19 +80,18 @@ class PartyChat extends Component {
 }
 
 PartyChat.propTypes = {
-  messages: PropTypes.arrayOf(PropTypes.object).isRequired
+  messages: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
-export default withTracker(() => {
+export default withTracker((props) => {
   const handle = Meteor.subscribe("messages");
+  const thisGroup = Meteor.user().profile.groupID;
   return {
-    messages: Messages.find({}).fetch(),
+    messages: Messages.find({group: thisGroup}).fetch(),
     user: Meteor.user(),
     ready : handle.ready()
   };
 })(PartyChat);
-
-
 
 
 

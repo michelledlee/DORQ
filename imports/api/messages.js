@@ -30,7 +30,23 @@ Meteor.methods({
     Messages.insert({
       message : message,
       createdAt : Date.now(),
-      owner : Meteor.user().username
+      owner : Meteor.user().username,
+      group: Meteor.user().profile.groupID
     });
+  },
+
+  "messages.getgroupmessages"(groupid) {
+    check(groupid, String);
+
+    if (! this.userId) {
+      throw new Meteor.Error("not-authorized");
+    }
+    Messages.find( 
+      { group: groupid }, {
+                  limit: 50,
+        sort: {
+          createdAt: 1
+        }
+      });
   }
 });
