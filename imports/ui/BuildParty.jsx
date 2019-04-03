@@ -18,16 +18,27 @@ class BuildParty extends Component {
   onSubmit = e => {
     event.preventDefault();
 
-    let data = { partyID: this.id, playerID: this.playerID.value, DMID: this.playerID };
+    let data = { partyID: this.id, playerID: this.inputID.value, DMID: this.playerID };
+    // first add this player to the DMs member list
     Meteor.call("users.addplayer", data, (err, res) => {
       if (err) {
         alert("There was error inserting check the console");
         console.log(err);
         return;
       }
+        // update the player's groupID if the add to the DM was successful
+        Meteor.call("users.addplayer", data, (err, res) => {
+        if (err) {
+          alert("There was error inserting check the console");
+          console.log(err);
+          return;
+        }
+        console.log(res);
+      });
       console.log(res);
     });
   }
+
 
   render() {
     return (
@@ -35,6 +46,7 @@ class BuildParty extends Component {
       <div style={{ height: "75vh" }} className="container valign-wrapper">
       <div className="row">
       <div className="col s12 center-align" style={{padding:"100px"}}>
+      <p>Current Party:</p>
       <form
           className="form-signin"
           noValidate
@@ -45,7 +57,7 @@ class BuildParty extends Component {
             id="playerID"
             type="text"
             min="0"
-            ref={input => (this.playerID = input)}
+            ref={input => (this.inputID = input)}
           />
           <div className="make-center">
             <button
