@@ -5,7 +5,6 @@ import { withTracker } from "meteor/react-meteor-data";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-import PartyChat from "./PartyChat.jsx"
 import DungeonMaster from "./DungeonMaster.jsx";
 import PartyMember from "./PartyMember.jsx";
 
@@ -38,7 +37,6 @@ class Dashboard extends Component {
       <h2>Hey there, {Meteor.user().username}!</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed turpis magna, varius nec bibendum feugiat, efficitur at nisl. Donec id ullamcorper lorem. Nam efficitur pulvinar lorem. Vestibulum augue eros, blandit quis libero vitae, cursus sodales nibh. Nulla volutpat lorem odio, eget lobortis felis sodales sit amet. Suspendisse lacinia sit amet ante at porta. Fusce nec elit et est rhoncus pellentesque a ut magna. Sed sed orci eget lorem congue fermentum et nec nisi. </p>
       {Meteor.user().profile.role === "Dungeon Master" ? <DungeonMaster /> : <PartyMember />}
-      <PartyChat />
       </div>
       );
   }

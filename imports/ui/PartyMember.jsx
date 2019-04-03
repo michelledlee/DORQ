@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { Meteor } from "meteor/meteor";
 import { withTracker } from "meteor/react-meteor-data";
 
+import PartyChat from "./PartyChat.jsx"
 import Generator from "./Generator.jsx";
 
 class PartyMember extends Component {
@@ -30,16 +31,24 @@ class PartyMember extends Component {
   render() {
     return (
       <div>
-      <p>My Info</p>
+      <h2>Player Info</h2>
+      <div className="row">
+      <div className="col-1">
+      </div>
+      <div className="col-4">
       <img src={Meteor.user().profile.avatar} alt="my face"/><br />
-      ID: {Meteor.user()._id}<br />
-      Email: {Meteor.user().email}<br />
-      <p>My Character
-      Name: {this.name} <br/>
-      Class: {this.role}<br/>
-      Status: {this.groupNo != "" ? "Active" : "Not Active"}<br/>
-      Level: {this.level}<br />
-      Ability Points:</p>
+      <b>ID:</b> {Meteor.user()._id}<br />
+      <b>Email:</b> {Meteor.user().email}<br />
+      </div>
+      <div className="col-1">
+      </div>
+      <div className="col-4">
+      <b>Character
+      Name:</b> {this.name} <br/>
+      <b>Class:</b> {this.role}<br/>
+      <b>Status:</b> {this.groupNo != "" ? "Active" : "Not Active"}<br/>
+      <b>Level:</b> {this.level}<br />
+      <b>Ability Points:</b>
       <ul>  
         <li>Strength: {Meteor.user().profile.stats.strength}</li>
         <li>Dexterity: {Meteor.user().profile.stats.dex}</li>
@@ -48,9 +57,14 @@ class PartyMember extends Component {
         <li>Wisdom: {Meteor.user().profile.stats.wisdom}</li>
         <li>Charisma: {Meteor.user().profile.stats.charisma}</li>
       </ul>
-      <p>Link To Chat</p>
-
-      <Generator />
+      </div>
+      <div className="col-9">
+        <PartyChat />
+      </div>
+      <div className="col-3">
+        <Generator />
+      </div>
+      </div>
       </div>
       );
   }

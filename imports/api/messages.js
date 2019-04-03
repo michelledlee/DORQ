@@ -11,7 +11,7 @@ if (Meteor.isServer) {
       .find({}, {
         limit: 50,
         sort: {
-          createdAt: 1
+          createdAt: -1
         }
       });
   });

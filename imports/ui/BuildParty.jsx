@@ -27,7 +27,7 @@ class BuildParty extends Component {
         return;
       }
         // update the player's groupID if the add to the DM was successful
-        Meteor.call("users.addplayer", data, (err, res) => {
+        Meteor.call("users.updateID", data, (err, res) => {
         if (err) {
           alert("There was error inserting check the console");
           console.log(err);
