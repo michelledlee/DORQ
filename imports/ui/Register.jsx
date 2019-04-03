@@ -204,7 +204,7 @@ class Register extends Component {
             avatar: avatarURL,
             role: this.role.value,
             groupID: "",
-            name: this.charname,
+            name: this.charname.value,
             level: 1,
             stats: abilityStats
           }
@@ -231,10 +231,7 @@ class Register extends Component {
     return (
        <div className="container">
         <div className="row">
-          <div
-            className="col-lg-10 col-xl-9 mx-auto"
-            style={{ padding: "100px" }}
-          >
+          <div className="sizebox col-lg-10 col-xl-9 mx-auto">
             <div className="card card-signin flex-row my-5">
               <div className="card-img-left d-none d-md-flex col-6" />
               <div className="card-body">
@@ -319,14 +316,8 @@ class Register extends Component {
                   </select>
                   </div>
                   <button
-                    style={{
-                      width: "150px",
-                      borderRadius: "3px",
-                      letterSpacing: "1.5px",
-                      marginTop: "1rem"
-                    }}
                     type="submit"
-                    className="btn btn-lg btn-primary btn-block text-uppercase"
+                    className="btn btn-dark btn-xl"
                   >
                     Sign up
                   </button>

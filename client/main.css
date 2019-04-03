@@ -1,4 +1,147 @@
 body {
-  padding: 10px;
   font-family: sans-serif;
+}
+
+.card-img-left {
+	background-image: url('img/dice-20.jpg');
+}
+
+.form-label-group {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.form-label-group>label {
+ 
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
+  /* Override default `<label>` margin */
+  line-height: 1.5;
+  color: #495057;
+  cursor: text;
+  /* Match the input under the label */
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  transition: all .1s ease-in-out;
+}
+
+.playerid {
+  margin-right: 2rem;
+}
+
+.icon {
+  float: left;
+  margin-bottom: .3rem!important;
+  margin: .4rem;
+}
+
+.sizebox {
+  padding-right: 65px!important;
+  padding-left: 65px!important;
+  ;
+}
+
+#messages {
+  height: 20rem;
+  overflow: scroll;
+}
+
+header.masthead-baby {
+  margin-bottom: 50px;
+  background: no-repeat center center;
+  background-color: #868e96;
+  background-attachment: scroll;
+  position: relative;
+  background-size: cover;
+}
+
+header.masthead-baby .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #212529;
+  opacity: 0.5;
+}
+
+header.masthead-baby .page-heading,
+header.masthead-baby .post-heading,
+header.masthead-baby .site-heading {
+  padding: 100px 0 50px;
+  color: white;
+}
+
+@media only screen and (min-width: 768px) {
+  header.masthead-baby .page-heading,
+  header.masthead-baby .post-heading,
+  header.masthead-baby .site-heading {
+    padding: 100px 0 50px;
+  }
+}
+
+header.masthead-baby .page-heading,
+header.masthead-baby .site-heading {
+  text-align: center;
+}
+
+header.masthead-baby .page-heading h1,
+header.masthead-baby .site-heading h1 {
+  font-size: 50px;
+  margin-top: 0;
+}
+
+header.masthead-baby .page-heading .subheading,
+header.masthead-baby .site-heading .subheading {
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1.1;
+  display: block;
+  margin: 10px 0 0;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+@media only screen and (min-width: 768px) {
+  header.masthead-baby .page-heading h1,
+  header.masthead-baby .site-heading h1 {
+    font-size: 80px;
+  }
+}
+
+header.masthead-baby .post-heading h1 {
+  font-size: 35px;
+}
+
+header.masthead-baby .post-heading .meta,
+header.masthead-baby .post-heading .subheading {
+  line-height: 1.1;
+  display: block;
+}
+
+header.masthead-baby .post-heading .subheading {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 10px 0 30px;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+header.masthead-baby .post-heading .meta {
+  font-size: 20px;
+  font-weight: 300;
+  font-style: italic;
+  font-family: 'Lora', 'Times New Roman', serif;
+}
+
+header.masthead-baby .post-heading .meta a {
+  color: #fff;
+}
+
+@media only screen and (min-width: 768px) {
+  header.masthead-baby .post-heading h1 {
+    font-size: 55px;
+  }
+  header.masthead-baby .post-heading .subheading {
+    font-size: 30px;
+  }
 }

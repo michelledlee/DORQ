@@ -43,39 +43,29 @@ class BuildParty extends Component {
   render() {
     return (
       <div>
-      <div style={{ height: "75vh" }} className="container valign-wrapper">
       <div className="row">
-      <div className="col s12 center-align" style={{padding:"100px"}}>
       <p>Current Party:</p>
       <form
           className="form-signin"
           noValidate
           onSubmit={this.onSubmit.bind(this)}
         >
-          <label htmlFor="playerID">Player ID</label>
-          <input
+        <div className="form-label-group">
+          <label htmlFor="playerID">Player ID: </label>
+          <input className="playerid"
             id="playerID"
             type="text"
             min="0"
             ref={input => (this.inputID = input)}
           />
-          <div className="make-center">
             <button
-              style={{
-                width: "150px",
-                borderRadius: "3px",
-                letterSpacing: "1.5px",
-                marginTop: "1rem"
-              }}
               type="submit"
-              className="btn btn-lg btn-primary btn-block text-uppercase"
+              className="btn btn-xl btn-dark text-uppercase"
             >
               Add Adventurer!
             </button>
-          </div>
+            </div>
         </form>
-      </div>
-      </div>
       </div>
       </div>
       )

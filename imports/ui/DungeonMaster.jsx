@@ -66,15 +66,9 @@ class DungeonMaster extends Component {
   render() {
     return (
       <div>
-      <div style={{ height: "75vh" }} className="container valign-wrapper">
-      <div className="row">
-      <div className="col s12 center-align" style={{padding:"100px"}}>
       <div className="row">{this.renderthePartyMembers()}</div>
       <BuildParty />
       <button onSubmit={this.onSubmit.bind(this)}>Click Me</button>
-      </div>
-      </div>
-      </div>
       </div>
       );
   }
