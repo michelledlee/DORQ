@@ -1,6 +1,8 @@
 import { Accounts } from "meteor/accounts-base";
 import { Mongo } from "meteor/mongo";
 import { Meteor } from "meteor/meteor";
+import { check } from "meteor/check";
+
 
 // export const Users = new Mongo.Collection("users");
 
@@ -9,8 +11,18 @@ Meteor.methods({
   "users.addplayer"(ID) {
      console.log("users.addplayer")
 
-    //finds the party based on groupID
+    // Make sure the user is logged in before getting but do we actually care
+    if (!this.userId) {
+      console.log("this probably don't even matter");
+      throw new Meteor.Error("not-authorized");
+    }
 
+    // validate the data pasesed in
+    check(ID.partyID, String);
+    check(ID.playerID, String);
+    check(ID.DMID, String);
+
+    //finds the party based on groupID
     console.log(ID);
     let dungeonMasterDoc = Meteor.users.findOne({ _id: ID.DMID});
     console.log(dungeonMasterDoc);
@@ -57,6 +69,17 @@ Meteor.methods({
   "users.updateID"(ID) {
      console.log("users.updateID")
 
+    // Make sure the user is logged in before getting but do we actually care
+    if (!this.userId) {
+      console.log("this probably don't even matter");
+      throw new Meteor.Error("not-authorized");
+    }
+
+    // validate the data pasesed in
+    check(ID.partyID, String);
+    check(ID.playerID, String);
+    check(ID.DMID, String);
+
     Meteor.users.update({ _id: ID.playerID }, 
       { $set: {"profile.groupID": ID.partyID} });
     }
@@ -66,7 +89,14 @@ Meteor.methods({
 
 // get players in a party
 Meteor.methods({
-  "users.getMembers"(ID) {
-    return Meteor.users.find({"profile.groupID": ID.partyID});
+  "users.getMembers"() {
+
+    // Make sure the user is logged in before getting but do we actually care
+    if (!this.userId) {
+      console.log("this probably don't even matter");
+      throw new Meteor.Error("not-authorized");
+    }
+
+    return Meteor.users.find({"profile.groupID": Meteor.user().profile.groupID}).fetch();
 }
 });

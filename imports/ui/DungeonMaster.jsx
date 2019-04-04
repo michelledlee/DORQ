@@ -24,9 +24,8 @@ class DungeonMaster extends Component {
 
   }
 
-
-  getPartyPeople() {
-      Meteor.call("users.getMembers", this.id, (err, res) => {
+  componentDidMount() {
+    Meteor.call("users.getMembers", null, (err, res) => {
         if (err) {
           alert("There was error inserting check the console");
           console.log(err);
@@ -78,7 +77,7 @@ class DungeonMaster extends Component {
       </div>
       <div className="row">
       <div className="col-9">
-        <PartyChat />
+        <PartyChat user={Meteor.user()} />
       </div>
       <div className="col-3">
         <Generator />

@@ -12,63 +12,28 @@ class Generator extends Component {
     this.dice = "";
     this.onSubmit = this.onSubmit.bind(this);
 
+    this.state = {
+      roll: 0
+    }
+
   }
 
   // Want to print out a line to chat that says what a certain roll was
   onSubmit = e => {
     e.preventDefault();
 
-    // roll dice and get number based on which dice was rolled
-    let diceRoll = 0;
-    switch(this.dice.value) {
-       case "D20":
-        diceRoll = Math.random() * (21 - 1) + 1;
-       break;
-       case "D10":
-        diceRoll = Math.random() * (11 - 1) + 1;
-        break;
-       case "D6":
-        diceRoll = Math.random() * (6 - 1) + 1;
-        break;
-       case "D4":
-        diceRoll = Math.random() * (4 - 1) + 1;
-        break;
-       default:
-        break;
-    }
-    diceRoll = Math.trunc(diceRoll);
-
-
-    // get base stat from user information
-    let statBonus = 0;
-    if (this.ability.value != "None") { // if this value has been filled in with a value other than none, get that stat
-      switch(this.ability.value) {
-         case "Strength":
-          statBonus = Meteor.user().profile.stats.strength;
-         break;
-         case "Dexterity":
-          statBonus = Meteor.user().profile.stats.dex;
-          break;
-         case "Constitution":
-          statBonus = Meteor.user().profile.stats.constitution;
-          break;
-         case "Intelligence":
-          statBonus = Meteor.user().profile.stats.intelligence;
-          break;
-         case "Wisdom":
-          statBonus = Meteor.user().profile.stats.wisdom;
-          break;
-         case "Charisma":
-          statBonus = Meteor.user().profile.stats.charisma;
-          break;
-         default:
-          break;
-      }
-    }
-
-    // add and create the string for output to chat
-    let totalRoll = diceRoll + statBonus;
-    alert(totalRoll);
+    let data = {dice: this.dice.value, ability: this.ability.value };
+    Meteor.call("util.rollDice", data, (err, res) => {
+        if (err) {
+          alert("There was error inserting check the console");
+          console.log(err);
+          return;
+        }
+        this.setState({
+        roll: res
+      });
+        console.log(res);
+      });
   }
 
   render() {

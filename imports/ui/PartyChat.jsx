@@ -80,7 +80,7 @@ PartyChat.propTypes = {
 
 export default withTracker((props) => {
   const handle = Meteor.subscribe("messages");
-  const thisGroup = Meteor.user().profile.groupID;
+  const thisGroup = props.user.profile.groupID;
   return {
     messages: Messages.find({group: thisGroup}).fetch(),
     user: Meteor.user(),
