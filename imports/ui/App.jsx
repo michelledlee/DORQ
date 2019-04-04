@@ -107,29 +107,29 @@ const LoginComponent = () => (
   </div>
 );
 
-const DashboardComponent = () => (
-  <div>
-    <header className="masthead-baby" style={{  backgroundImage: "url(" + "img/dice-narrow.jpg" + ")" }}>
-    <div className="overlay"></div>
-    <div className="container">
-      <div className="row">
-        <div className="col-lg-8 col-md-10 mx-auto">
-          <div className="site-heading">
-            <span className="subheading">DASHBOARD</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-  <div className="container">
-      {Meteor.user() ? <Dashboard /> : 
-        <p className="col-lg-10 mx-auto">You are not logged in.</p>}
-      <p className="text-muted small mb-0">
-      Copyright &copy; DORQ 2019
-      </p>
-    </div>
-  </div>
-);
+// const DashboardComponent = () => (
+//   <div>
+//     <header className="masthead-baby" style={{  backgroundImage: "url(" + "img/dice-narrow.jpg" + ")" }}>
+//     <div className="overlay"></div>
+//     <div className="container">
+//       <div className="row">
+//         <div className="col-lg-8 col-md-10 mx-auto">
+//           <div className="site-heading">
+//             <span className="subheading">DASHBOARD</span>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   </header>
+//   <div className="container">
+//       {Meteor.user() ? <Dashboard /> : 
+//         <p className="col-lg-10 mx-auto">You are not logged in.</p>}
+//       <p className="text-muted small mb-0">
+//       Copyright &copy; DORQ 2019
+//       </p>
+//     </div>
+//   </div>
+// );
 
 
 const NotFoundPage = () => (
@@ -165,7 +165,7 @@ const NotFoundPage = () => (
 // };
 
 
-export default class App extends Component {
+class App extends Component {
   // constructor(props) {
   //   super(props);
   // }
@@ -180,7 +180,7 @@ export default class App extends Component {
             <Route exact path="/about" component={AboutComponent} />
             <Route exact path="/register" component={RegisterComponent} />
             <Route exact path="/login" component={LoginComponent} />
-            <Route exact path="/dashboard" component={DashboardComponent} />
+            <Route exact path="/dashboard" component={Dashboard} />
             <Route component={NotFoundPage} />
           </Switch>
           <br />
@@ -195,12 +195,12 @@ export default class App extends Component {
 //   loggedIn: PropTypes.bool
 // };
 
-// export default withTracker(() => {
-//   const user = Meteor.user();
-//   const userDataAvailable = user !== undefined;
-//   const loggedIn = user && userDataAvailable;
-//   return {
-//     user: user,
-//     loggedIn: loggedIn
-//   };
-// })(App);
+export default withTracker(() => {
+  // const user = Meteor.user();
+  // const userDataAvailable = user !== undefined;
+  // const loggedIn = user && userDataAvailable;
+  return {
+    user: Meteor.user()
+    // loggedIn: loggedIn
+  };
+})(App);

@@ -5,7 +5,7 @@ import { withTracker } from "meteor/react-meteor-data";
 
 import Register from "./Register.jsx";
 
-export default class NavBar extends Component {
+class NavBar extends Component {
   render() {
     return (
       <div>
@@ -38,24 +38,36 @@ export default class NavBar extends Component {
               <li className="nav-item">
                 <Link to="/dashboard">Dashboard</Link>
               </li>
-            </ul>
+ </ul>
             {Meteor.user() ? (
-              <Link to="/" onClick={Meteor.logout()}>
+                          <ul className="navbar-nav mr-auto">
+
+            <li className="nav-item">  <Link to="/" onClick={Meteor.logout}>
                 Logout
-              </Link>
-            ) : (
-              <ul className="navbar-nav mr-auto">
+              </Link></li>
+              </ul>
+            ) : (         <ul className="navbar-nav mr-auto">
+
                 <li className="nav-item">
                   <Link to="/register">Register</Link>
                 </li>
                 <li className="nav-item">
                   <Link to="/login">Login</Link>
                 </li>
-              </ul>
+                </ul>
             )}
+                         
+
           </div>
         </nav>
       </div>
     );
   }
 }
+
+
+export default withTracker(() => {
+  return {
+    user: Meteor.user()
+  };
+})(NavBar);

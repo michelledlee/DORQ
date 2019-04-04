@@ -1,5 +1,7 @@
 import { Mongo } from "meteor/mongo";
 import { Meteor } from "meteor/meteor";
+import { check } from "meteor/check";
+
 
 export const Parties = new Mongo.Collection("parties");
 
@@ -27,6 +29,17 @@ Meteor.methods({
   "parties.createparty"(party) {
     console.log("parties.createparty");
 
+    // Make sure the user is logged in before getting
+    if (!this.userId) {
+      throw new Meteor.Error("not-authorized");
+    }
+
+    // validate the data pasesed in
+    check(party.DMID, String);
+    check(party.groupID, String);
+    check(party.name, String);
+    check(party.members, [String]);
+
     // create a new party for this DM
     return Parties.insert({
       masterID: party.DMID,
@@ -42,8 +55,18 @@ Meteor.methods({
   "parties.addplayer"(party) {
      console.log("parties.addplayer")
 
-    //finds the party based on groupID
+    // Make sure the user is logged in before getting but do we actually care
+    if (!this.userId) {
+      console.log("this probably don't even matter");
+      throw new Meteor.Error("not-authorized");
+    }
 
+    // validate the data pasesed in
+    check(party.partyID, String);
+    check(party.playerID, String);
+    check(party.DMID, String);
+
+    //finds the party based on groupID
     console.log(party);
     let partyDocument = Parties.findOne({ partyID: party.partyID });
     console.log(partyDocument);

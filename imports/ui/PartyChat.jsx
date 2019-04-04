@@ -9,7 +9,7 @@ class PartyChat extends Component {
   constructor(props) {
     super(props);
 
-    this.id = Meteor.user().profile.groupID;
+    this.id = props.user.profile.groupID;
     this.state = {
       message: "",
     };
@@ -85,7 +85,7 @@ PartyChat.propTypes = {
 
 export default withTracker((props) => {
   const handle = Meteor.subscribe("messages");
-  const thisGroup = Meteor.user().profile.groupID;
+  const thisGroup = props.user.profile.groupID;
   return {
     messages: Messages.find({group: thisGroup}).fetch(),
     user: Meteor.user(),
