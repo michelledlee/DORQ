@@ -44,7 +44,7 @@ class PartyMember extends Component {
   render() {
     return (
       <div>
-      <h2>Player Info</h2>
+      <h2>Player Infos</h2>
       <div className="row">
       <div className="col-1">
       </div>
