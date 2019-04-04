@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { Meteor } from "meteor/meteor";
 import { withTracker } from "meteor/react-meteor-data";
 
-import PartyChat from "./PartyChat.jsx"
+import PartyChat from "./PartyChat.jsx";
 import Generator from "./Generator.jsx";
 
 class PartyMember extends Component {
@@ -58,6 +58,13 @@ class PartyMember extends Component {
         <li>Charisma: {Meteor.user().profile.stats.charisma}</li>
       </ul>
       </div>
+      </div>
+      <p>
+      <div className="content-section-heading text-center">
+        <h2>Party Chat</h2>
+      </div>
+      </p>
+      <div className="row">
       <div className="col-9">
         <PartyChat />
       </div>

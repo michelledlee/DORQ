@@ -58,9 +58,6 @@ class PartyChat extends Component {
     console.log("Messages", this.props.messages);
     return (
       <div className="container">
-        <div className="content-section-heading text-center">
-        <h2>Party Chat</h2>
-        </div>
         <div id="messages">{this.renderMessages()}</div>
         <label className="fixlabel" htmlFor="inMessage">
           <input

@@ -44,7 +44,11 @@ class BuildParty extends Component {
     return (
       <div>
       <div className="row">
-      <p>Current Party:</p>
+      <div className="content-section-heading text-center">
+        <h2>Current Party</h2>
+      </div>
+      </div>
+      <div className="row">
       <form
           className="form-signin"
           noValidate

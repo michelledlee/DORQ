@@ -6,6 +6,7 @@ import { withTracker } from "meteor/react-meteor-data";
 
 import PartyChat from "./PartyChat.jsx"
 import BuildParty from "./BuildParty.jsx";
+import Generator from "./Generator.jsx";
 
 class DungeonMaster extends Component {
   constructor(props) {
@@ -68,9 +69,21 @@ class DungeonMaster extends Component {
     return (
       <div>
       <div className="row">{this.renderthePartyMembers()}</div>
+      <div className="container">
       <BuildParty />
+      </div>
       <button onSubmit={this.onSubmit.bind(this)}>Click Me</button>
+      <div className="content-section-heading text-center">
+        <h2>Party Chat</h2>
+      </div>
+      <div className="row">
+      <div className="col-9">
         <PartyChat />
+      </div>
+      <div className="col-3">
+        <Generator />
+      </div>
+      </div>
       </div>
       );
   }
