@@ -75,16 +75,10 @@ class Generator extends Component {
                   </select>
                   </div>
                   <button
-                    style={{
-                      width: "150px",
-                      borderRadius: "3px",
-                      letterSpacing: "1.5px",
-                      marginTop: "1rem"
-                    }}
                     type="submit"
-                    className="btn btn-lg btn-primary btn-block text-uppercase"
+                    className="btn btn-lg btn-dark text-uppercase"
                   >
-                    Feeling Lucky
+                    Feeling Lucky?
                   </button>
                 </form>
 

@@ -26,6 +26,19 @@ body {
   transition: all .1s ease-in-out;
 }
 
+.col-3 {
+  padding: 0rem!important;
+}
+
+.col-9 {
+  padding: 0rem!important;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+}
+
 .playerid {
   margin-right: 2rem;
 }
@@ -39,7 +52,11 @@ body {
 .sizebox {
   padding-right: 65px!important;
   padding-left: 65px!important;
-  ;
+}
+
+.fixlabel {
+  margin-top: .5rem!important;
+  display: flex!important;
 }
 
 #messages {

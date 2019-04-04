@@ -9,7 +9,6 @@ class PartyChat extends Component {
   constructor(props) {
     super(props);
 
-    this.id = props.user.profile.groupID;
     this.state = {
       message: "",
     };
@@ -59,14 +58,10 @@ class PartyChat extends Component {
     console.log("Messages", this.props.messages);
     return (
       <div className="container">
-        <div className="content-section-heading text-center">
-        <h2>Party Chat</h2>
-        </div>
         <div id="messages">{this.renderMessages()}</div>
-        <label htmlFor="inMessage">
-          Chat:{" "}
+        <label className="fixlabel" htmlFor="inMessage">
           <input
-            className="form-control"
+            className="fixlabel form-control"
             type="text"
             placeholder="Enter your message"
             value={this.state.message}
