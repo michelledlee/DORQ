@@ -18,6 +18,9 @@ class DungeonMaster extends Component {
     this.groupNo = "";
     this.onSubmit = this.onSubmit.bind(this);
 
+    this.tweet = "";
+    this.onSubmitTweet = this.onSubmitTweet.bind(this);
+
     this.state = {
       partyMembers: []
     };
@@ -48,6 +51,28 @@ class DungeonMaster extends Component {
   });
   }
 
+  onSubmitTweet = e => {
+    e.preventDefault();
+
+     Meteor.call("tweeter.tweetBot", null, (err, res) => {
+        if (err) {
+          alert("There was error inserting check the console");
+          console.log(err);
+          return;
+        }
+        console.log(res);
+      });
+
+      // Meteor.call("twitter.Tweet", this.tweet.value, (err, res) => {
+      //   if (err) {
+      //     alert("There was error inserting check the console");
+      //     console.log(err);
+      //     return;
+      //   }
+      //   console.log(res);
+      // });
+  }
+
   renderthePartyMembers() {
     return this.state.partyMembers.map((m, j) => (
       <div className="card col-4" key={m._id}>
@@ -72,9 +97,7 @@ class DungeonMaster extends Component {
       <BuildParty />
       </div>
       <button onSubmit={this.onSubmit.bind(this)}>Click Me</button>
-      <div className="content-section-heading text-center">
-        <h2>Party Chat</h2>
-      </div>
+      <h2>Party Chat</h2>
       <div className="row">
       <div className="col-9">
         <PartyChat user={Meteor.user()} />
@@ -82,6 +105,27 @@ class DungeonMaster extends Component {
       <div className="col-3">
         <Generator />
       </div>
+      <form
+        className="form-signin"
+        noValidate
+        onSubmit={this.onSubmitTweet}
+      >
+      <h2>Announcements</h2>
+        <div className="form-label-group">
+          <label htmlFor="name">DM Message</label>
+          <input
+            id="name"
+            type="text"
+            ref={input => (this.tweet = input)}
+          />
+        </div>
+        <button
+          type="submit"
+          className="btn btn-dark btn-xl"
+        >
+          Tweet
+        </button>
+      </form>
       </div>
       </div>
       );

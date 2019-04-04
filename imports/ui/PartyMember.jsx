@@ -72,11 +72,7 @@ class PartyMember extends Component {
       </ul>
       </div>
       </div>
-      <p>
-      <div className="content-section-heading text-center">
         <h2>Party Chat</h2>
-      </div>
-      </p>
       <div className="row">
       <div className="col-9">
         <PartyChat user={Meteor.user()} />

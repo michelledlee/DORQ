@@ -69,7 +69,7 @@ Dashboard.propTypes = {
   user: PropTypes.object
 };
 
-export default withTracker((props) => { debugger
+export default withTracker((props) => {
   return {
     user: Meteor.user()
   };
