@@ -52,5 +52,5 @@ Note: To use the current version of the Twitter API, you will need to sign up fo
 [CS-5610 Web Development Spring 2019](http://johnguerra.co/classes/webDevelopment_spring_2019/)
 
 ## Link to Video Demonstration
-[Demonstration on YouTube](UPDATEEEEEEEEEEEEEEEEEEEEEEEE)  
+[Demonstration on YouTube](https://youtu.be/oSA2xboWtIA)  
 [Google Slides Presentation](https://docs.google.com/presentation/d/17QbRj9vHVIneqLvPukY7X1FF4-QoZDHJ6G6l4QYWxFU/edit?usp=sharing)
