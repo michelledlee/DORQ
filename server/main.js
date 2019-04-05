@@ -15,18 +15,26 @@ Meteor.startup(() => {
 
 // Get list of all method names on Lists
 const LISTS_METHODS = [
- "user.getWins",
+	"user.getWins",
+	"util.rollDice",
+	"users.addplayer",
+	"users.updateID",
+	"users.getMembers",
+	"tweeter.tweetBot",
+	"parties.createparty",
+	"messages.insert",
+	"messages.getgroupmessages"
 ];
 
 // Only allow 5 list operations per connection per second
 
 if (Meteor.isServer) {
- DDPRateLimiter.addRule({
-   name(name) {
-     return LISTS_METHODS.includes(name);
-   },
+	DDPRateLimiter.addRule({
+		name(name) {
+			return LISTS_METHODS.includes(name);
+		},
 
-   // Rate limit per connection ID
-   connectionId() { return true; }
- }, 5, 1000);
+		// Rate limit per connection ID
+		connectionId() { return true; }
+	}, 5, 1000);
 }

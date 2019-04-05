@@ -29,7 +29,7 @@ class PartyChat extends Component {
 	}
 
 	onChange(evt) {
-		console.log("change", evt.target.value);
+		// console.log("change", evt.target.value);
 		this.setState({
 			message: evt.target.value
 		});
@@ -43,11 +43,11 @@ class PartyChat extends Component {
 				(err, res) => {
 					if (err) {
 						alert("There was error inserting check the console");
-						console.log(err);
+						// console.log(err);
 						return;
 					}
 
-					console.log("Message inserted", res);
+					// console.log("Message inserted", res);
 					this.setState({
 						message: ""
 					});
@@ -56,7 +56,7 @@ class PartyChat extends Component {
 	}
 
 	render() {
-		console.log("Messages", this.props.messages);
+		// console.log("Messages", this.props.messages);
 		return (
 			<div className="container">
 				<div id="messages">{this.renderMessages()}</div>

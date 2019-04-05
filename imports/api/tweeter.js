@@ -17,7 +17,7 @@ if(process.env.TWITTER_CONSUMER_KEY) {
 	config = require("./config.js");
 }
 
-console.log("Config = ", config);
+// console.log("Config = ", config);
 
 let T = new Twitter(config);
 
@@ -32,7 +32,7 @@ let params = {
 // print urls for tweets in console....
 Meteor.methods({
 	"tweeter.tweetBot"(data) {
-  	console.log("tweeter.tweetBot");
+		// console.log("tweeter.tweetBot");
 
 		//     T.get('search/tweets', params, function(err, data, response) {
 		//   // If there is no error, proceed
@@ -59,9 +59,9 @@ Meteor.methods({
 		//     console.log(err);
 		//   }
 		// })
-		console.log(data);
+		// console.log(data);
 		if (data === "" || data === null) {
-			console.log("Invalid tweet");
+			// console.log("Invalid tweet");
 			return;
 		}
 		T.post("statuses/update", {status: data},  function(error, tweet, response) {
