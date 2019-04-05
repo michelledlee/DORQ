@@ -15,17 +15,17 @@ DORQ is a website for ostentatious orcs, excellent elves, and gregarious gnomes 
 ## Screenshots
 
 **Full Sized Homepage** 
-![Image of Homepage (Full-Sized)](https://github.com/coleig/Potluck2X/blob/master/public/vendor/img/ScreenShot-Landing.png?raw=true)
+![Image of Homepage (Full-Sized)](https://github.com/michelledlee/DORQ/blob/master/public/img/screenshot1.PNG?raw=true)
 
 **Responsive Homepage**
-![Image of Homepage (Resized)](https://github.com/coleig/Potluck2X/blob/master/public/vendor/img/ScreenShot-Responsive.png?raw=true)
+![Image of Player Page](https://github.com/michelledlee/DORQ/blob/master/public/img/screenshot2.PNG?raw=true)
 
 **Events Page**
-![Events Page](https://github.com/coleig/Potluck2X/blob/master/public/vendor/img/ScreenShot-Events.png?raw=true)
+![Image of Dungeon Master Page](https://github.com/michelledlee/DORQ/blob/master/public/img/screenshot1.PNG?raw=true)
 
 ## Demo Gifs
 **Login and Browse Events**  
-![Browse Events](https://github.com/coleig/Potluck2X/blob/master/public/vendor/img/ScreenShot-Gif.gif?raw=true)
+![Explore Dungeon Master Page](https://github.com/michelledlee/DORQ/blob/master/public/img/gifit_1554440112971.gif?raw=true)
 
 ## Tech Requirements
 Text Editor (Authors recommend Sublime)
