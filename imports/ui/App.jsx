@@ -30,7 +30,7 @@ const HomeComponent = () => {
 			</header>
 			<div className="container">
 				<div className="col-lg-10 mx-auto">
-					{Meteor.user() ? <p>sugma</p> : <p>ligma</p>}
+					Welcome to DORQ, an app for organizing your D&D parties! Make friends, add them to your groups, and even play your game all in one place. To find out more, register above, or see our About page!
 				</div>
 				<p className="text-muted small mb-0">
         Copyright &copy; DORQ 2019

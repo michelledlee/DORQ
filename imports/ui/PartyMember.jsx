@@ -13,7 +13,8 @@ class PartyMember extends Component {
 
 		this.id = this.props.user._id;
 		this.name = this.props.user.username;
-		this.avatar = this.props.user.avatar;
+		this.avatar = this.props.user.profile.avatar;
+		this.email = this.props.user.emails[0].address;
 		this.role = this.props.user.profile.role;
 		this.groupNo = this.props.user.profile.groupNo;
 		this.level = this.props.user.profile.level;
@@ -44,41 +45,45 @@ class PartyMember extends Component {
 	render() {
 		return (
 			<div>
-				<h2>Player Info</h2>
-				<div className="row">
-					<div className="col-1">
-					</div>
-					<div className="col-4">
-						<img src={this.avatar}alt="my face"/><br />
-						<b>ID:</b> {this.id}<br />
-						<b>Email:</b> {this.email}<br />
-					</div>
-					<div className="col-1">
-					</div>
-					<div className="col-4">
-						<b>Character
-      Name:</b> {this.name} <br/>
-						<b>Class:</b> {this.role}<br/>
-						<b>Status:</b> {this.groupNo != "" ? "Active" : "Not Active"}<br/>
-						<b>Level:</b> {this.level}<br />
-						<b>Ability Points:</b>
-						<ul>  
-							<li>Strength: {this.strength}</li>
-							<li>Dexterity: {this.dexterity}</li>
-							<li>Constitution: {this.constitution}</li>
-							<li>Intelligence: {this.intelligence}</li>
-							<li>Wisdom: {this.wisdom}</li>
-							<li>Charisma: {this.charisma}</li>
-						</ul>
+				<div className="container">
+					<p>You're ready to play! Huzzah! Give your <b>Dungeon Master</b> your <b>Unique Player ID</b>, listed below, to join a party! <b>Already in a party?</b> Get to chatting! Use the built-in generator to select your dice, and post your rolls directly to the chat!</p>
+					<h2>Player Info</h2>
+					<div className="row">
+						<div className="col-1">
+						</div>
+						<div className="col-4">
+							<img src={this.avatar}alt="my face"/><br />
+							<b>ID:</b> {this.id}<br />
+							<b>Email:</b> {this.email}<br />
+						</div>
+						<div className="col-1">
+						</div>
+						<div className="col-4">
+							<b>Character Name:</b> {this.name} <br/>
+							<b>Class:</b> {this.role}<br/>
+							<b>Status:</b> {this.groupNo != "" ? "Active" : "Not Active"}<br/>
+							<b>Level:</b> {this.level}<br />
+							<b>Ability Points:</b>
+							<ul>  
+								<li>Strength: {this.strength}</li>
+								<li>Dexterity: {this.dexterity}</li>
+								<li>Constitution: {this.constitution}</li>
+								<li>Intelligence: {this.intelligence}</li>
+								<li>Wisdom: {this.wisdom}</li>
+								<li>Charisma: {this.charisma}</li>
+							</ul>
+						</div>
 					</div>
 				</div>
-				<h2>Party Chat</h2>
-				<div className="row">
-					<div className="col-9">
-						<PartyChat user={Meteor.user()} />
-					</div>
-					<div className="col-3">
-						<Generator />
+				<div className="container">
+					<h2>Party Chat</h2>
+					<div className="row">
+						<div className="col-9">
+							<PartyChat user={Meteor.user()} />
+						</div>
+						<div className="col-3">
+							<Generator />
+						</div>
 					</div>
 				</div>
 			</div>

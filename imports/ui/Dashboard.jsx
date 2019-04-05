@@ -30,7 +30,6 @@ class Dashboard extends Component {
 	//   }
 	// }
 
-
 	render() {
 		return (
 			<div>
@@ -46,19 +45,16 @@ class Dashboard extends Component {
 						</div>
 					</div>
 				</header>
-				{Meteor.user() ? "sugma" : "ligma"}
 				<div className="container">
 
 					{Meteor.user()? (
 						<div className="col-lg-10 mx-auto">
 							<h2>Hey there, {Meteor.user() ? Meteor.user().username : " no "}!</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed turpis magna, varius nec bibendum feugiat, efficitur at nisl. Donec id ullamcorper lorem. Nam efficitur pulvinar lorem. Vestibulum augue eros, blandit quis libero vitae, cursus sodales nibh. Nulla volutpat lorem odio, eget lobortis felis sodales sit amet. Suspendisse lacinia sit amet ante at porta. Fusce nec elit et est rhoncus pellentesque a ut magna. Sed sed orci eget lorem congue fermentum et nec nisi. </p>
 							{Meteor.user() && Meteor.user().profile.role === "Dungeon Master" ? <DungeonMaster user={Meteor.user()} /> : <PartyMember user={Meteor.user()}/>}
 						</div>
 					)
 						: <p className="col-lg-10 mx-auto">You are not logged in.</p>
 					}
-
 				</div>
 			</div>
 		);
