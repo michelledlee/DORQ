@@ -15,7 +15,7 @@ import Dashboard from "./Dashboard.jsx";
 const HomeComponent = () => {
 	return (
 		<div>
-			<header className="masthead" style={{  backgroundImage: "url(" + "img/dice.jpg" + ")" }}>
+			<header className="masthead" style={{  backgroundImage: "url(" + "img/dice.jpg" + ")" }} role="banner">
 				<div className="overlay"></div>
 				<div className="container">
 					<div className="row">
@@ -28,7 +28,7 @@ const HomeComponent = () => {
 					</div>
 				</div>
 			</header>
-			<div className="container">
+			<div className="container" role="main">
 				<div className="col-lg-10 mx-auto">
 					Welcome to DORQ, an app for organizing your D&D parties! Make friends, add them to your groups, and even play your game all in one place. To find out more, register above, or see our About page!
 				</div>
@@ -42,7 +42,7 @@ const HomeComponent = () => {
 
 const AboutComponent = () => (
 	<div>
-		<header className="masthead-baby" style={{  backgroundImage: "url(" + "img/dice-narrow.jpg" + ")" }}>
+		<header className="masthead-baby" style={{  backgroundImage: "url(" + "img/dice-narrow.jpg" + ")" }} role="banner">
 			<div className="overlay"></div>
 			<div className="container">
 				<div className="col-lg-8 col-md-10 mx-auto">
@@ -52,9 +52,9 @@ const AboutComponent = () => (
 				</div>
 			</div>
 		</header>
-		<div className="container">
+		<div className="container" role="main" >
 			<div className="col-lg-10 mx-auto">
-				<h2>About D&D & Me</h2>
+				<h1>About D&D & Me</h1>
 			</div>
 			<p className="text-muted small mb-0">
       Copyright &copy; DORQ 2019
@@ -65,7 +65,7 @@ const AboutComponent = () => (
 
 const RegisterComponent = () => (
 	<div>
-		<header className="masthead-baby" style={{  backgroundImage: "url(" + "img/dice-narrow.jpg" + ")" }}>
+		<header className="masthead-baby" style={{  backgroundImage: "url(" + "img/dice-narrow.jpg" + ")" }} role="banner">
 			<div className="overlay"></div>
 			<div className="container">
 				<div className="col-lg-8 col-md-10 mx-auto">
@@ -75,7 +75,7 @@ const RegisterComponent = () => (
 				</div>
 			</div>
 		</header>
-		<div className="container">
+		<div className="container" role="main">
 			<Register />
 			<p className="text-muted small mb-0">
           Copyright &copy; DORQ 2019
@@ -86,7 +86,7 @@ const RegisterComponent = () => (
 
 const LoginComponent = () => (
 	<div>
-		<header className="masthead-baby" style={{  backgroundImage: "url(" + "img/dice-narrow.jpg" + ")" }}>
+		<header className="masthead-baby" style={{  backgroundImage: "url(" + "img/dice-narrow.jpg" + ")" }} role="banner">
 			<div className="overlay"></div>
 			<div className="container">
 				<div className="row">
@@ -98,7 +98,7 @@ const LoginComponent = () => (
 				</div>
 			</div>
 		</header>
-		<div className="container">
+		<div className="container" role="main">
 			<Login />
 			<p className="text-muted small mb-0">
       Copyright &copy; DORQ 2019

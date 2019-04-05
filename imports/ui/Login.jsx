@@ -36,10 +36,10 @@ class Login extends Component {
        <div className="container">
         <div className="row">
           <div className="sizebox col-lg-10 col-xl-9 mx-auto">
+            <h1>Login to DORQ!</h1>
             <div className="card card-signin flex-row my-5">
               <div className="card-img-left d-none d-md-flex col-6" />
               <div className="card-body">
-                <h5 className="card-title">Login below</h5>
                 <p className="grey-text text-darken-1">
                   Don't have an account? <Link to="/register">Register</Link>
                 </p>
@@ -76,7 +76,6 @@ class Login extends Component {
             </div>
           </div>
         </div>
-        
       </div>
     );
   }

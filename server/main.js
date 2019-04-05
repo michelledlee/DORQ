@@ -4,7 +4,8 @@ import "../imports/api/parties.js";
 import "../imports/api/util.js";
 import "../imports/api/users.js";
 import "../imports/api/tweeter.js";
-// import "../imports/api/twitter.js";
+import { WebApp } from 'meteor/webapp';
+WebApp.addHtmlAttributeHook(() => ({ lang: 'en' }));
 
 
 Meteor.startup(() => {

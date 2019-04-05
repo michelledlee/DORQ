@@ -41,7 +41,7 @@ class Generator extends Component {
        <div className="container">
        
               <div className="card-body">
-                <h5 className="card-title">My Dice</h5>
+                <h3 className="card-title">My Dice</h3>
                 <form
                   className="form-signin"
                   noValidate
@@ -63,10 +63,10 @@ class Generator extends Component {
                   </select>
                   </div>
                                     <div className="form-label-group">
-                  <label htmlFor="optionsselect">Choose Dice</label>
+                  <label htmlFor="optionsselect2">Choose Dice</label>
                   <select 
                     className="form-control" 
-                    id="optionsselect"
+                    id="optionsselect2"
                     ref={input => (this.dice = input)}>
                     <option>D20</option>
                     <option>D10</option>

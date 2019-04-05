@@ -60,10 +60,11 @@ class PartyChat extends Component {
 		return (
 			<div className="container">
 				<div id="messages">{this.renderMessages()}</div>
-				<label className="fixlabel" htmlFor="inMessage">
+				<label className="fixlabel" htmlFor="inMessage" aria-label="enter your message">
 					<input
 						className="fixlabel form-control"
 						type="text"
+						id="inMessage"
 						placeholder="Enter your message"
 						value={this.state.message}
 						onChange={this.onChange.bind(this)}
