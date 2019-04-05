@@ -6,86 +6,87 @@ import { withTracker } from "meteor/react-meteor-data";
 import { Messages } from "../api/messages.js";
 
 class PartyChat extends Component {
-  constructor(props) {
-    super(props);
 
-    this.state = {
-      message: "",
-    };
-  }
+	constructor(props) {
+		super(props);
 
-  renderMessages() {
-    return this.props.messages.map(m=>
-      <div className="card" key={m._id}><div>        
-      <img
-          className="icon bg-light rounded"
-          width="48"
-          height="48"
-          src={m.avatar}
-          alt={m.owner}
-        />
-        <b>{m.owner}:</b> {m.message}</div></div>);
-  }
+		this.state = {
+			message: "",
+		};
+	}
 
-  onChange(evt) {
-    console.log("change", evt.target.value);
-    this.setState({
-      message: evt.target.value
-    });
-  }
+	renderMessages() {
+		return this.props.messages.map(m=>
+			<div className="card" key={m._id}><div>        
+				<img
+					className="icon bg-light rounded"
+					width="48"
+					height="48"
+					src={m.avatar}
+					alt={m.owner}
+				/>
+				<b>{m.owner}:</b> {m.message}</div></div>);
+	}
 
-  onKey(evt) {
-    if (evt.key === "Enter") {
+	onChange(evt) {
+		console.log("change", evt.target.value);
+		this.setState({
+			message: evt.target.value
+		});
+	}
 
-      Meteor.call("messages.insert",
-        this.state.message,
-        (err, res) => {
-          if (err) {
-            alert("There was error inserting check the console");
-            console.log(err);
-            return;
-          }
+	onKey(evt) {
+		if (evt.key === "Enter") {
 
-          console.log("Message inserted", res);
-          this.setState({
-            message: ""
-          });
-        });
-    }
-  }
+			Meteor.call("messages.insert",
+				this.state.message,
+				(err, res) => {
+					if (err) {
+						alert("There was error inserting check the console");
+						console.log(err);
+						return;
+					}
 
-  render() {
-    console.log("Messages", this.props.messages);
-    return (
-      <div className="container">
-        <div id="messages">{this.renderMessages()}</div>
-        <label className="fixlabel" htmlFor="inMessage">
-          <input
-            className="fixlabel form-control"
-            type="text"
-            placeholder="Enter your message"
-            value={this.state.message}
-            onChange={this.onChange.bind(this)}
-            onKeyPress={this.onKey.bind(this)}
-          />
-        </label>
-      </div>
-    );
-  }
+					console.log("Message inserted", res);
+					this.setState({
+						message: ""
+					});
+				});
+		}
+	}
+
+	render() {
+		console.log("Messages", this.props.messages);
+		return (
+			<div className="container">
+				<div id="messages">{this.renderMessages()}</div>
+				<label className="fixlabel" htmlFor="inMessage">
+					<input
+						className="fixlabel form-control"
+						type="text"
+						placeholder="Enter your message"
+						value={this.state.message}
+						onChange={this.onChange.bind(this)}
+						onKeyPress={this.onKey.bind(this)}
+					/>
+				</label>
+			</div>
+		);
+	}
 }
 
 PartyChat.propTypes = {
-  messages: PropTypes.arrayOf(PropTypes.object).isRequired,
+	messages: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default withTracker((props) => {
-  const handle = Meteor.subscribe("messages");
-  const thisGroup = props.user.profile.groupID;
-  return {
-    messages: Messages.find({group: thisGroup}).fetch(),
-    user: Meteor.user(),
-    ready : handle.ready()
-  };
+	const handle = Meteor.subscribe("messages");
+	const thisGroup = props.user.profile.groupID;
+	return {
+		messages: Messages.find({group: thisGroup}).fetch(),
+		user: Meteor.user(),
+		ready : handle.ready()
+	};
 })(PartyChat);
 
 

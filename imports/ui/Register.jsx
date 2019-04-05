@@ -249,7 +249,7 @@ class Register extends Component {
                 <h5 className="card-title">Register</h5>
 
                 <p className="grey-text text-darken-1">
-                  Already have an account? <Link to="/login">Log in</Link>
+                  Already have an account? <Link to="/login">Log in!</Link>
                 </p>
                 <form
                   className="form-signin"
