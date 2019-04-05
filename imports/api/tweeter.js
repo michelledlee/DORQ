@@ -17,7 +17,7 @@ if(process.env.TWITTER_CONSUMER_KEY) {
 	config = require("./config.js");
 }
 
-// console.log("Config = ", config);
+console.log("Config = ", config);
 
 let T = new Twitter(config);
 
@@ -65,6 +65,7 @@ Meteor.methods({
 			return;
 		}
 		T.post("statuses/update", {status: data},  function(error, tweet, response) {
+			console.log("error: ", error);
 			if(error) throw error;
 			console.log(tweet);  // Tweet body.
 			console.log(response);  // Raw response object.

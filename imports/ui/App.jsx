@@ -55,6 +55,7 @@ const AboutComponent = () => (
 		<div className="container" role="main" >
 			<div className="col-lg-10 mx-auto">
 				<h1>About D&D & Me</h1>
+				DORQ is a website for ostentatious orcs, excellent elves, and gregarious gnomes to gather together online to facilitate their quirky quests through a marvelous made-up world. Adventurers alike can register for an account as one of many exciting classes like wizards, sorcerors, and even monks! Then they can provide their top secret unique ID to a Dungeon Master to join a party. Once logged in users can play games through the interactive chat module. Dungeon Masters can use the built-in Twitter access to send out relevant news to their party members as well as provide insights into the scandalous skits that are being sketched out real time.
 			</div>
 			<p className="text-muted small mb-0">
       Copyright &copy; DORQ 2019
