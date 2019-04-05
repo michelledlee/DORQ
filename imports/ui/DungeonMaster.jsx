@@ -91,9 +91,10 @@ class DungeonMaster extends Component {
 
   render() {
     return (
-      <div>
+      <div className="col-lg-12" role="main">
+        <h1>Hey there, {Meteor.user() ? Meteor.user().username : " no "}!</h1>
       <p><b>You're a Dungeon Master!</b> Wow! Gather your party members by requesting their <b>Unique Player ID,</b> and add it using the form below. Interact with your party via chat, and monitor their dice rolls! What a crazy useful experience!</p>
-      <div className="content-section-heading text-center">
+      <div className="content-section-heading">
         <h2>Current Party</h2>
         </div>
         <p>Look at all these DORQs:</p>

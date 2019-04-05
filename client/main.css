@@ -1,9 +1,22 @@
 body {
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .card-img-left {
 	background-image: url('img/dice-20.jpg');
+}
+
+h2 {
+  margin-top: 2rem!important;
+}
+.btn-dark {
+    background-color: #212E42!important;
+    border-color: #212E42!important;
+}
+
+.btn-dark:hover {
+    background-color: #5E6775!important;
+    border-color: #5E6775!important;
 }
 
 .form-label-group {
@@ -18,7 +31,7 @@ body {
   margin-bottom: 0;
   /* Override default `<label>` margin */
   line-height: 1.5;
-  color: #495057;
+  color: #212529;
   cursor: text;
   /* Match the input under the label */
   border: 1px solid transparent;

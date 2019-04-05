@@ -49,7 +49,6 @@ class Dashboard extends Component {
 
 					{Meteor.user()? (
 						<div className="col-lg-10 mx-auto">
-							<h2>Hey there, {Meteor.user() ? Meteor.user().username : " no "}!</h2>
 							{Meteor.user() && Meteor.user().profile.role === "Dungeon Master" ? <DungeonMaster user={Meteor.user()} /> : <PartyMember user={Meteor.user()}/>}
 						</div>
 					)
