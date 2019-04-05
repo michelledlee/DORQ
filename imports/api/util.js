@@ -7,11 +7,11 @@ import { check } from "meteor/check";
 // get players in a party
 Meteor.methods({
 	"util.rollDice"(data) {
-  	console.log("util.rollDdce");
+	// console.log("util.rollDdce");
 
 		// Make sure the user is logged in before getting but do we actually care
 		if (!this.userId) {
-			console.log("this probably don't even matter");
+			// console.log("this probably don't even matter");
 			throw new Meteor.Error("not-authorized");
 		}
 
