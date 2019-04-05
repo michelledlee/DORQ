@@ -3,12 +3,21 @@ import { Meteor } from "meteor/meteor";
 
 let Twitter = require("twitter");
 // let config = require("../../data/twitter_config");
-let config = {
-	"consumer_key": "8KP2BeQ6ff1Gxo3i2TW7lLZj2",
-	"consumer_secret": "ya7CEHKlfbo5c5xDBHoOfMMj8LhgmsaxW91WVB6ThzMGlZrI8T",
-	"access_token_key": "1084344836411420673-uJFhPInb973grXBHdJ9s7mpDF2UsJJ",
-	"access_token_secret": "Ec7wAbwEp8ewfVAfhv4T9jWunLS7GQ4dyXmlwtRoJ62G0"
-};
+let config;
+
+if(process.env.TWITTER_CONSUMER_KEY) {
+	config = {
+		"consumer_key": process.env.TWITTER_CONSUMER_KEY,
+		"consumer_secret": process.env.TWITTER_CONSUMER_SECRET,
+		"access_token_key": process.env.TWITTER_ACCESS_TOKEN_KEY,
+		"access_token_secret":process.env.TWITTER_ACCESS_TOKEN_SECRET
+	};
+ 
+} else {
+	config = require("./config.js");
+}
+
+console.log("Config = ", config);
 
 let T = new Twitter(config);
 
