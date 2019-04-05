@@ -53,4 +53,4 @@ Note: To use the current version of the Twitter API, you will need to sign up fo
 
 ## Link to Video Demonstration
 [Demonstration on YouTube](UPDATEEEEEEEEEEEEEEEEEEEEEEEE)  
-[Google Slides Presentation](UPDATE ME BABY)
+[Google Slides Presentation](https://docs.google.com/presentation/d/17QbRj9vHVIneqLvPukY7X1FF4-QoZDHJ6G6l4QYWxFU/edit?usp=sharing)
