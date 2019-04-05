@@ -53,8 +53,9 @@ class DungeonMaster extends Component {
 
   onSubmitTweet = e => {
     e.preventDefault();
+    console.log(this.tweet.value);
 
-     Meteor.call("tweeter.tweetBot", null, (err, res) => {
+     Meteor.call("tweeter.tweetBot", this.tweet.value, (err, res) => {
         if (err) {
           alert("There was error inserting check the console");
           console.log(err);

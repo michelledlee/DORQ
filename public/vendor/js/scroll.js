@@ -3,4 +3,4 @@ let out = document.getElementById("messages");
 var isScrolledToBottom = out.scrollHeight - out.clientHeight <= out.scrollTop + 1;
 // if scrolled = true, update top
 if(isScrolledToBottom)
-    out.scrollTop = out.scrollHeight - out.clientHeight;
+	out.scrollTop = out.scrollHeight - out.clientHeight;

@@ -13,98 +13,98 @@ import Dashboard from "./Dashboard.jsx";
 
 
 const HomeComponent = () => {
-  return (
-  <div>
-  <header className="masthead" style={{  backgroundImage: "url(" + "img/dice.jpg" + ")" }}>
-    <div className="overlay"></div>
-    <div className="container">
-      <div className="row">
-        <div className="col-lg-8 col-md-10 mx-auto">
-          <div className="site-heading">
-            <h1>DORQ</h1>
-            <span className="subheading">aka d&d&me</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-  <div className="container">
-        <div className="col-lg-10 mx-auto">
-      {Meteor.user() ? <p>sugma</p> : <p>ligma</p>}
-        </div>
-      <p className="text-muted small mb-0">
+	return (
+		<div>
+			<header className="masthead" style={{  backgroundImage: "url(" + "img/dice.jpg" + ")" }}>
+				<div className="overlay"></div>
+				<div className="container">
+					<div className="row">
+						<div className="col-lg-8 col-md-10 mx-auto">
+							<div className="site-heading">
+								<h1>DORQ</h1>
+								<span className="subheading">aka d&d&me</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+			<div className="container">
+				<div className="col-lg-10 mx-auto">
+					{Meteor.user() ? <p>sugma</p> : <p>ligma</p>}
+				</div>
+				<p className="text-muted small mb-0">
         Copyright &copy; DORQ 2019
-      </p>
-    </div>
-    </div>
-    );
+				</p>
+			</div>
+		</div>
+	);
 };
 
 const AboutComponent = () => (
-  <div>
-    <header className="masthead-baby" style={{  backgroundImage: "url(" + "img/dice-narrow.jpg" + ")" }}>
-    <div className="overlay"></div>
-    <div className="container">
-        <div className="col-lg-8 col-md-10 mx-auto">
-          <div className="site-heading">
-            <span className="subheading">ABOUT</span>
-        </div>
-      </div>
-    </div>
-  </header>
-  <div className="container">
-        <div className="col-lg-10 mx-auto">
-    <h2>About D&D & Me</h2>
-        </div>
-    <p className="text-muted small mb-0">
+	<div>
+		<header className="masthead-baby" style={{  backgroundImage: "url(" + "img/dice-narrow.jpg" + ")" }}>
+			<div className="overlay"></div>
+			<div className="container">
+				<div className="col-lg-8 col-md-10 mx-auto">
+					<div className="site-heading">
+						<span className="subheading">ABOUT</span>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div className="container">
+			<div className="col-lg-10 mx-auto">
+				<h2>About D&D & Me</h2>
+			</div>
+			<p className="text-muted small mb-0">
       Copyright &copy; DORQ 2019
-    </p>
-    </div>
-  </div>
+			</p>
+		</div>
+	</div>
 );
 
 const RegisterComponent = () => (
-  <div>
-    <header className="masthead-baby" style={{  backgroundImage: "url(" + "img/dice-narrow.jpg" + ")" }}>
-    <div className="overlay"></div>
-    <div className="container">
-        <div className="col-lg-8 col-md-10 mx-auto">
-          <div className="site-heading">
-              <span className="subheading">REGISTER</span>
-          </div>
-      </div>
-    </div>
-  </header>
-  <div className="container">
-      <Register />
-        <p className="text-muted small mb-0">
+	<div>
+		<header className="masthead-baby" style={{  backgroundImage: "url(" + "img/dice-narrow.jpg" + ")" }}>
+			<div className="overlay"></div>
+			<div className="container">
+				<div className="col-lg-8 col-md-10 mx-auto">
+					<div className="site-heading">
+						<span className="subheading">REGISTER</span>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div className="container">
+			<Register />
+			<p className="text-muted small mb-0">
           Copyright &copy; DORQ 2019
-        </p>
-    </div>
-  </div>
+			</p>
+		</div>
+	</div>
 );
 
 const LoginComponent = () => (
-  <div>
-    <header className="masthead-baby" style={{  backgroundImage: "url(" + "img/dice-narrow.jpg" + ")" }}>
-    <div className="overlay"></div>
-    <div className="container">
-      <div className="row">
-        <div className="col-lg-8 col-md-10 mx-auto">
-          <div className="site-heading">
-            <span className="subheading">LOGIN</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-  <div className="container">
-    <Login />
-      <p className="text-muted small mb-0">
+	<div>
+		<header className="masthead-baby" style={{  backgroundImage: "url(" + "img/dice-narrow.jpg" + ")" }}>
+			<div className="overlay"></div>
+			<div className="container">
+				<div className="row">
+					<div className="col-lg-8 col-md-10 mx-auto">
+						<div className="site-heading">
+							<span className="subheading">LOGIN</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div className="container">
+			<Login />
+			<p className="text-muted small mb-0">
       Copyright &copy; DORQ 2019
-      </p>
-    </div>
-  </div>
+			</p>
+		</div>
+	</div>
 );
 
 // const DashboardComponent = () => (
@@ -133,10 +133,10 @@ const LoginComponent = () => (
 
 
 const NotFoundPage = () => (
-  <div>
-    <h2>Page not found</h2>
-    <div>SUHAS HELP</div>
-  </div>
+	<div>
+		<h2>Page not found</h2>
+		<div>SUHAS HELP</div>
+	</div>
 );
 
 // function PrivateRoute({ component: Component, ...rest }) {
@@ -166,28 +166,28 @@ const NotFoundPage = () => (
 
 
 class App extends Component {
-  // constructor(props) {
-  //   super(props);
-  // }
+	// constructor(props) {
+	//   super(props);
+	// }
 
-  render() {
-    return (
-      <Router>
-        <div>
-          <NavBar />
-          <Switch>
-            <Route exact path="/" component={HomeComponent} />
-            <Route exact path="/about" component={AboutComponent} />
-            <Route exact path="/register" component={RegisterComponent} />
-            <Route exact path="/login" component={LoginComponent} />
-            <Route exact path="/dashboard" component={Dashboard} />
-            <Route component={NotFoundPage} />
-          </Switch>
-          <br />
-        </div>
-      </Router>
-    );
-  }
+	render() {
+		return (
+			<Router>
+				<div>
+					<NavBar />
+					<Switch>
+						<Route exact path="/" component={HomeComponent} />
+						<Route exact path="/about" component={AboutComponent} />
+						<Route exact path="/register" component={RegisterComponent} />
+						<Route exact path="/login" component={LoginComponent} />
+						<Route exact path="/dashboard" component={Dashboard} />
+						<Route component={NotFoundPage} />
+					</Switch>
+					<br />
+				</div>
+			</Router>
+		);
+	}
 }
 
 // App.propTypes = {
@@ -196,11 +196,11 @@ class App extends Component {
 // };
 
 export default withTracker(() => {
-  // const user = Meteor.user();
-  // const userDataAvailable = user !== undefined;
-  // const loggedIn = user && userDataAvailable;
-  return {
-    user: Meteor.user()
-    // loggedIn: loggedIn
-  };
+	// const user = Meteor.user();
+	// const userDataAvailable = user !== undefined;
+	// const loggedIn = user && userDataAvailable;
+	return {
+		user: Meteor.user()
+		// loggedIn: loggedIn
+	};
 })(App);

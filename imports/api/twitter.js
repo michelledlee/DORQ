@@ -4,21 +4,22 @@ import { Meteor } from "meteor/meteor";
 import { check } from "meteor/check";
 
 
-let Twitter = require('twitter-node-client').Twitter;
+let Twitter = require("twitter-node-client").Twitter;
 let twitter = new Twitter();
 
 var error = function (err, response, body) {
-  console.log('ERROR [%s]', err);
+	console.log("ERROR [%s]", err);
 };
 var success = function (data) {
-    console.log('Data [%s]', data);
+	console.log("Data [%s]", data);
 };
 
 // tweet the tweets
 Meteor.methods({
-  "twitter.Tweet"(data) {
+	"twitter.Tweet"(data) {
   	console.log("twitter.Tweet");
 
-    twitter.postTweet(data, error, success);
-  }
+		twitter.postTweet(data, error, success);
+	}
 });
+
