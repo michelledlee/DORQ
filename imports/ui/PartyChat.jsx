@@ -21,7 +21,7 @@ class PartyChat extends Component {
           className="icon bg-light rounded"
           width="48"
           height="48"
-          src={`https://api.adorable.io/avatars/48/${m.owner.toLowerCase()}@adorable.io.png`}
+          src={m.avatar}
           alt={m.owner}
         />
         <b>{m.owner}:</b> {m.message}</div></div>);

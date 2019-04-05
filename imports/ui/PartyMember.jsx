@@ -13,13 +13,12 @@ class PartyMember extends Component {
 
     this.id = this.props.user._id;
     this.name = this.props.user.username;
-    this.avatar = this.props.user.avatar;
+    this.email = this.props.user.emails[0].address;
+    this.avatar = this.props.user.profile.avatar;
     this.role = this.props.user.profile.role;
     this.groupNo = this.props.user.profile.groupNo;
     this.level = this.props.user.profile.level;
     this.charname = this.props.user.profile.name;
-    this.strength = this.props.user.profile.stats.strength;
-    this.strength = this.props.user.profile.stats.strength;
     this.strength = this.props.user.profile.stats.strength;
     this.dexterity = this.props.user.profile.stats.dexterity;
     this.constitution = this.props.user.profile.stats.constitution;
@@ -44,7 +43,8 @@ class PartyMember extends Component {
   render() {
     return (
       <div>
-      <h2>Player Infos</h2>
+      <p>You're ready to play! Huzzah! Give your <b>Dungeon Master</b> your <b>Unique Player ID</b>, listed below, to join a party! <b>Already in a party?</b> Get to chatting! Use the built-in generator to select your dice, and post your rolls directly to the chat!</p>
+      <h2>Player Info</h2>
       <div className="row">
       <div className="col-1">
       </div>

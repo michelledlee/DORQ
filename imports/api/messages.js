@@ -30,6 +30,7 @@ Meteor.methods({
     Messages.insert({
       message : message,
       createdAt : Date.now(),
+      avatar: Meteor.user().profile.avatar,
       owner : Meteor.user().username,
       group: Meteor.user().profile.groupID
     });

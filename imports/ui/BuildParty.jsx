@@ -44,18 +44,13 @@ class BuildParty extends Component {
     return (
       <div>
       <div className="row">
-      <div className="content-section-heading text-center">
-        <h2>Current Party</h2>
-      </div>
-      </div>
-      <div className="row">
       <form
           className="form-signin"
           noValidate
           onSubmit={this.onSubmit.bind(this)}
         >
         <div className="form-label-group">
-          <label htmlFor="playerID">Player ID: </label>
+          <label htmlFor="playerID" id="boxspace">Player ID: </label>
           <input className="playerid"
             id="playerID"
             type="text"

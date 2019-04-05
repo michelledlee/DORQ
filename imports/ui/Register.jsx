@@ -42,7 +42,18 @@ class Register extends Component {
             avatar: avatarURL,
             role: this.role.value,
             groupID: groupIDrand,
-            members: [String]
+            name: "Dungeon Master",
+            level: 100,
+            members: [String],
+            stats: {
+              strength: 0,
+              dexterity: 0,
+              constitution: 0,
+              intelligence: 0,
+              wisdom: 0,
+              charisma: 0,
+              hp: 0
+            }
           }
         }
 
@@ -300,11 +311,11 @@ class Register extends Component {
                     className="form-control" 
                     id="optionsselect"
                     ref={input => (this.role = input)}>
+                    <option>Dungeon Master</option>
                     <option>Barbarian</option>
                     <option>Bard</option>
                     <option>Cleric</option>
                     <option>Druid</option>
-                    <option>Dungeon Master</option>
                     <option>Fighter</option>
                     <option>Monk</option>
                     <option>Paladin</option>

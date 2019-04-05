@@ -21,7 +21,6 @@ class DungeonMaster extends Component {
     this.state = {
       partyMembers: []
     };
-
   }
 
   componentDidMount() {
@@ -67,7 +66,14 @@ class DungeonMaster extends Component {
   render() {
     return (
       <div>
+      <p><b>You're a Dungeon Master!</b> Wow! Gather your party members by requesting their <b>Unique Player ID,</b> and add it using the form below. Interact with your party via chat, and monitor their dice rolls! What a crazy useful experience!</p>
+      <div className="content-section-heading text-center">
+        <h2>Current Party</h2>
+        </div>
+        <p>Look at all these DORQs:</p>
+      <div className="container">
       <div className="row">{this.renderthePartyMembers()}</div>
+      </div>
       <div className="container">
       <BuildParty />
       </div>

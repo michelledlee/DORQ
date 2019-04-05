@@ -26,6 +26,10 @@ body {
   transition: all .1s ease-in-out;
 }
 
+label#boxspace {
+  margin-top: 2rem;
+}
+
 .col-3 {
   padding: 0rem!important;
 }
