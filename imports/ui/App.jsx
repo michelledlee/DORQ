@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import { Meteor } from "meteor/meteor";
 import { Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import { withTracker } from "meteor/react-meteor-data";
 import PropTypes from "prop-types";
 
-
+import News from "./News.jsx";
 import NavBar from "./NavBar.jsx";
 import Register from "./Register.jsx";
 import Login from "./Login.jsx";
@@ -40,6 +41,7 @@ const HomeComponent = () => {
 		</div>
 	);
 };
+
 
 const AboutComponent = () => (
 	<div>
@@ -180,6 +182,7 @@ class App extends Component {
 					<NavBar />
 					<Switch>
 						<Route exact path="/" component={HomeComponent} />
+						<Route exact path="/news" component={News} />
 						<Route exact path="/about" component={AboutComponent} />
 						<Route exact path="/register" component={RegisterComponent} />
 						<Route exact path="/login" component={LoginComponent} />
@@ -207,3 +210,5 @@ export default withTracker(() => {
 		// loggedIn: loggedIn
 	};
 })(App);
+
+// export default withRouter(App);

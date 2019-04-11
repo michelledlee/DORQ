@@ -3,6 +3,7 @@ import { withTracker } from "meteor/react-meteor-data";
 import PropTypes from "prop-types";
 import { Meteor } from "meteor/meteor";
 import { Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { Redirect } from "react-router-dom";
 import { Accounts } from "meteor/accounts-base";
 
@@ -19,12 +20,14 @@ class Login extends Component {
 
   onSubmit = e => {
     e.preventDefault();
+    let that = this;
     Meteor.loginWithPassword(this.name.value, this.password.value, function(error) {
-      
       if (error) {
         console.log(error);
       } else {
         console.log(Meteor.user());
+         // redirect to dashboard
+         that.props.history.push("/dashboard");
       }
     });
 
@@ -85,4 +88,4 @@ export default withTracker(() => {
   return {
     user: Meteor.user()
   };
-})(Login);
+})(withRouter(Login));

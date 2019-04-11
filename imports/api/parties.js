@@ -18,7 +18,7 @@ if (Meteor.isServer) {
 				}
 			);
 		} catch (e) {
-			console.log(e);
+			// console.log(e);
 		}
 	});
 
@@ -27,7 +27,7 @@ if (Meteor.isServer) {
 // create a new party
 Meteor.methods({
 	"parties.createparty"(party) {
-		console.log("parties.createparty");
+		// console.log("parties.createparty");
 
 		// Make sure the user is logged in before getting
 		if (!this.userId) {
@@ -53,11 +53,11 @@ Meteor.methods({
 // add a member to a party
 Meteor.methods({
 	"parties.addplayer"(party) {
-		console.log("parties.addplayer");
+		// console.log("parties.addplayer");
 
 		// Make sure the user is logged in before getting but do we actually care
 		if (!this.userId) {
-			console.log("this probably don't even matter");
+			// console.log("this probably don't even matter");
 			throw new Meteor.Error("not-authorized");
 		}
 
@@ -67,26 +67,26 @@ Meteor.methods({
 		check(party.DMID, String);
 
 		//finds the party based on groupID
-		console.log(party);
+		// console.log(party);
 		let partyDocument = Parties.findOne({ partyID: party.partyID });
-		console.log(partyDocument);
+		// console.log(partyDocument);
 		let membersList = partyDocument.members;
 		let newMembersList = membersList;
 
 		let newMember = party.playerID;
-		console.log("playerID to add: " + newMember);  // TO DO NEED TO ADD THIS TO PARAM
+		// console.log("playerID to add: " + newMember);  // TO DO NEED TO ADD THIS TO PARAM
 
 		// check if the player is already in the members list
 		for (let i = 0; i < membersList.length; i++) {
-			console.log("in the loop");
+			// console.log("in the loop");
 
 			// get the current member being iterated on
 			let currentMember = party.members[i];
-			console.log("list member: " + currentMember);
+			// console.log("list member: " + currentMember);
 
 			if (newMember === currentMember) {
 				//  already in the list, do not add
-				console.log("aLrEaDy AdDeD");
+				// console.log("aLrEaDy AdDeD");
 				return;
 
 			}
@@ -103,11 +103,11 @@ Meteor.methods({
 // get all parties
 Meteor.methods({
 	"parties.get"() {
-		console.log("parties.get");
+		// console.log("parties.get");
 
 		// Make sure the user is logged in before getting but do we actually care
 		if (!this.userId) {
-			console.log("this probably don't even matter");
+			// console.log("this probably don't even matter");
 			throw new Meteor.Error("not-authorized");
 		}
 

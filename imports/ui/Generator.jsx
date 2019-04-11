@@ -34,6 +34,16 @@ class Generator extends Component {
       });
         console.log(res);
       });
+
+    // make a string to pass the chat function
+    let rollMessage = "Rolled a " + this.state.roll + " in " + this.ability.value + ".";
+    Meteor.call("messages.insert", rollMessage, (err, res) => {
+          if (err) {
+            alert("There was error inserting check the console");
+            // console.log(err);
+            return;
+          }
+        });
   }
 
   render() {
@@ -90,6 +100,7 @@ class Generator extends Component {
 
 export default withTracker(() => {
   return {
-    user: Meteor.user()
+    user: Meteor.user(),
+    // roll: this.state.roll
   };
 })(Generator);

@@ -72,18 +72,21 @@ class PartyMember extends Component {
 							<li>Wisdom: {this.wisdom}</li>
 							<li>Charisma: {this.charisma}</li>
 						</ul>
+						<b>Weapons:</b> <br/>
+						<b>Spells:</b> <br/>
+
 					</div>
 				</div>
-			<h2>Party Chat</h2>
-			<div className="row">
-				<div className="col-9">
-					<PartyChat user={Meteor.user()} />
-				</div>
-				<div className="col-3">
-					<Generator />
+				<h2>Party Chat</h2>
+				<div className="row">
+					<div className="col-9">
+						<PartyChat user={Meteor.user()} />
+					</div>
+					<div className="col-3">
+						<Generator />
+					</div>
 				</div>
 			</div>
-		</div>
 		);
 	}
 }
