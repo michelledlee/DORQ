@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { withTracker } from "meteor/react-meteor-data";
 import { Accounts } from "meteor/accounts-base";
 import { Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { Meteor } from "meteor/meteor";
 
 class Register extends Component {
@@ -222,11 +223,12 @@ class Register extends Component {
         }
       }
       
+      let that = this;
     Accounts.createUser(userData, function(error) {
-        if (Meteor.user()) {
-           console.log(Meteor.userId());
+        if (!error) {
 
            // redirect to dashboard
+           that.props.history.push("/dashboard");
         } else {
            console.log("err: " + error.reason);
         }
@@ -347,4 +349,4 @@ export default withTracker(() => {
   return {
     user: Meteor.user()
   };
-})(Register);
+})(withRouter(Register));

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Meteor } from "meteor/meteor";
 import { Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { withTracker } from "meteor/react-meteor-data";
 
@@ -33,10 +34,9 @@ class BuildParty extends Component {
           console.log(err);
           return;
         }
-        console.log(res);
       });
-      console.log(res);
     });
+    window.location.reload(); 
   }
 
 
@@ -82,4 +82,4 @@ export default withTracker(() => {
   return {
     user: Meteor.user()
   };
-})(BuildParty);
+})(withRouter(BuildParty));

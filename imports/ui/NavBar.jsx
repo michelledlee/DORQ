@@ -6,6 +6,15 @@ import { withTracker } from "meteor/react-meteor-data";
 import Register from "./Register.jsx";
 
 class NavBar extends Component {
+
+	logoutOnClick() {
+		Meteor.logout(err => {
+			if (err) {
+				console.log(err);
+			}
+		});
+	}
+
 	render() {
 		return (
 			<div>
@@ -36,17 +45,20 @@ class NavBar extends Component {
 								<Link to="/about">About</Link>
 							</li>
 							<li className="nav-item">
+								<Link to="/news">News</Link>
+							</li>
+							<li className="nav-item">
 								<Link to="/dashboard">Dashboard</Link>
 							</li>
 						</ul>
 						{Meteor.user() ? (
-							<ul className="navbar-nav mr-auto">
+							<ul className="navbar-nav">
 
-								<li className="nav-item">  <Link to="/" onClick={Meteor.logout}>
+								<li className="nav-item">  <Link to="/" onClick={this.logoutOnClick.bind(this)}>
                 Logout
 								</Link></li>
 							</ul>
-						) : (         <ul className="navbar-nav mr-auto">
+						) : (         <ul className="navbar-nav mr-roboto">
 
 							<li className="nav-item">
 								<Link to="/register">Register</Link>
