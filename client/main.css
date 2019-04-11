@@ -10,13 +10,13 @@ h2 {
   margin-top: 2rem!important;
 }
 .btn-dark {
-    background-color: #212E42!important;
-    border-color: #212E42!important;
+    background-color: #956D86!important;
+    border-color: #956D86!important;
 }
 
 .btn-dark:hover {
-    background-color: #5E6775!important;
-    border-color: #5E6775!important;
+    background-color: #3B2934!important;
+    border-color: #3B2934!important;
 }
 
 .form-label-group {
@@ -41,6 +41,10 @@ h2 {
 
 label#boxspace {
   margin-top: 2rem;
+}
+
+.header-img {
+  background-image: url('img/dice.png');
 }
 
 .col-3 {
@@ -133,7 +137,7 @@ header.masthead-baby .site-heading .subheading {
   line-height: 1.1;
   display: block;
   margin: 10px 0 0;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Tangerine', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 @media only screen and (min-width: 768px) {
@@ -157,14 +161,14 @@ header.masthead-baby .post-heading .subheading {
   font-size: 24px;
   font-weight: 600;
   margin: 10px 0 30px;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Tangerine', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 header.masthead-baby .post-heading .meta {
   font-size: 20px;
   font-weight: 300;
   font-style: italic;
-  font-family: 'Lora', 'Times New Roman', serif;
+  font-family: 'Tangerine', 'Times New Roman', serif;
 }
 
 header.masthead-baby .post-heading .meta a {

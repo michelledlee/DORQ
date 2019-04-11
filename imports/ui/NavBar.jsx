@@ -11,7 +11,7 @@ class NavBar extends Component {
 			<div>
 				<nav className="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
 					<a className="navbar-brand" href="/">
-            DORQ
+					<img src="img/dice-small.png" alt="a small image of a die"></img>
 					</a>
 					<button
 						className="navbar-toggler"
