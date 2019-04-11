@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import { Meteor } from "meteor/meteor";
 import { Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import { withTracker } from "meteor/react-meteor-data";
 import PropTypes from "prop-types";
 
-
+import News from "./News.jsx";
 import NavBar from "./NavBar.jsx";
 import Register from "./Register.jsx";
 import Login from "./Login.jsx";
@@ -40,6 +41,7 @@ const HomeComponent = () => {
 	);
 };
 
+
 const AboutComponent = () => (
 	<div>
 		<header className="masthead-baby" style={{  backgroundImage: "url(" + "img/dice-narrow.jpg" + ")" }} role="banner">
@@ -55,6 +57,7 @@ const AboutComponent = () => (
 		<div className="container" role="main" >
 			<div className="col-lg-10 mx-auto">
 				<h1>About D&D & Me</h1>
+				DORQ is a website for ostentatious orcs, excellent elves, and gregarious gnomes to gather together online to facilitate their quirky quests through a marvelous made-up world. Adventurers alike can register for an account as one of many exciting classes like wizards, sorcerors, and even monks! Then they can provide their top secret unique ID to a Dungeon Master to join a party. Once logged in users can play games through the interactive chat module. Dungeon Masters can use the built-in Twitter access to send out relevant news to their party members as well as provide insights into the scandalous skits that are being sketched out real time.
 			</div>
 			<p className="text-muted small mb-0">
       Copyright &copy; DORQ 2019
@@ -177,6 +180,7 @@ class App extends Component {
 					<NavBar />
 					<Switch>
 						<Route exact path="/" component={HomeComponent} />
+						<Route exact path="/news" component={News} />
 						<Route exact path="/about" component={AboutComponent} />
 						<Route exact path="/register" component={RegisterComponent} />
 						<Route exact path="/login" component={LoginComponent} />
@@ -204,3 +208,5 @@ export default withTracker(() => {
 		// loggedIn: loggedIn
 	};
 })(App);
+
+// export default withRouter(App);
