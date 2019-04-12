@@ -43,17 +43,18 @@ Meteor.methods({
 
 // print out the tweets for the news feed
 Meteor.methods({
-	"tweeter.printTweets"() {
-		T.get("search/tweets", params, function(err, data, response) {
-			// If there is no error, proceed
-			if (!err) {
-				console.log("from tweeter");
-				console.log(data);
-				console.log(response);
-				return response;
-			} else {
-				console.log(err);
-			}
-		});
+	async "tweeter.printTweets"() {
+		return await T.get("search/tweets", params);
+
+		//  function(err, data, response) {
+		// 	// If there is no error, proceed
+		// 	if (!err) {
+		// 		console.log("from tweeter");
+		// 		console.log(data);
+		// 		return data;
+		// 	} else {
+		// 		console.log(err);
+		// 	}
+		// });
 	}
 });

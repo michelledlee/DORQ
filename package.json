@@ -17,6 +17,7 @@
     "react-dom": "^16.8.5",
     "react-meteor-data": "^0.2.11",
     "react-router-dom": "^5.0.0",
+    "react-twitter-embed": "^2.0.7",
     "twitter": "^1.7.1"
   },
   "meteor": {
