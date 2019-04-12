@@ -62,7 +62,7 @@ class News extends Component {
   renderTweets() {
      return this.state.tweets.statuses.map((m, j) => (
 
-      <div className="card col-4" key={m.id}>
+      <div className="card-add col-4" key={m.id}>
           <TwitterTweetEmbed
             tweetId={m.id_str}
           />

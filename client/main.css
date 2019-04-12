@@ -6,6 +6,23 @@ body {
 	background-image: url('img/dice-20.jpg');
 }
 
+.card-add {
+  height: 20rem;
+  overflow: scroll;
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  /*min-width: 0;*/
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: .25rem;
+  margin-bottom: 1rem;
+}
+
 h2 {
   margin-top: 2rem!important;
 }

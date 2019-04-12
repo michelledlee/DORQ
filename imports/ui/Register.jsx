@@ -245,7 +245,7 @@ class Register extends Component {
        <div className="container">
         <div className="row">
           <div className="sizebox col-lg-10 col-xl-9 mx-auto">
-          <h1>Reigster for DORQ!</h1>
+          <h1>Reigister for DORQ!</h1>
             <div className="card card-signin flex-row my-5">
               <div className="card-img-left d-none d-md-flex col-6" />
               <div className="card-body">
