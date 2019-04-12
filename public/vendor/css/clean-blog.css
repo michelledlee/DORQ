@@ -26,7 +26,7 @@ h4,
 h5,
 h6 {
   font-weight: 800;
-  font-family: 'Tangerine', sans-serif;
+  font-family: 'Fondamento', sans-serif;
 }
 
 a {
@@ -36,7 +36,7 @@ a {
 }
 
 a:focus, a:hover {
-  color: #5E6775;
+  color: #BABABA;
 }
 
 blockquote {
@@ -113,17 +113,16 @@ img::-moz-selection {
   #mainNav .navbar-brand {
     padding: 10px 20px;
     color: #956D86;
-    background-image: url('img/dice-small.png');
   }
   #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
-    color: #5E6775;
+    color: ##BABABA;
   }
   #mainNav .navbar-nav > li.nav-item > a {
     padding: 10px 20px;
     color: #fff;
   }
   #mainNav .navbar-nav > li.nav-item > a:focus, #mainNav .navbar-nav > li.nav-item > a:hover {
-    color: #5E6775;
+    color: #BABABA;
   }
 }
 
@@ -271,7 +270,7 @@ header.masthead .post-heading .meta a {
 
 .post-preview > a:focus, .post-preview > a:hover {
   text-decoration: none;
-  color: #0085A1;
+  color: #BABABA;
 }
 
 .post-preview > a > .post-title {

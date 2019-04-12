@@ -10,8 +10,8 @@ h2 {
   margin-top: 2rem!important;
 }
 .btn-dark {
-    background-color: #956D86!important;
-    border-color: #956D86!important;
+    background-color: #996480!important;
+    border-color: #996480!important;
 }
 
 .btn-dark:hover {
@@ -137,7 +137,7 @@ header.masthead-baby .site-heading .subheading {
   line-height: 1.1;
   display: block;
   margin: 10px 0 0;
-  font-family: 'Tangerine', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Fondamento', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 @media only screen and (min-width: 768px) {
