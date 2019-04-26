@@ -26,7 +26,7 @@ h4,
 h5,
 h6 {
   font-weight: 800;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Fondamento', sans-serif;
 }
 
 a {
@@ -36,7 +36,7 @@ a {
 }
 
 a:focus, a:hover {
-  color: #5E6775;
+  color: #BABABA;
 }
 
 blockquote {
@@ -81,13 +81,13 @@ img::-moz-selection {
   position: absolute;
   border-bottom: 1px solid #e9ecef;
   background-color: white;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
   align-items: center;
 }
 
 #mainNav .navbar-brand {
   font-weight: 800;
-  color: #343a40;
+  color: #956D86;
 }
 
 #mainNav .navbar-toggler {
@@ -112,17 +112,17 @@ img::-moz-selection {
   }
   #mainNav .navbar-brand {
     padding: 10px 20px;
-    color: #fff;
+    color: #956D86;
   }
   #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
-    color: #5E6775;
+    color: ##BABABA;
   }
   #mainNav .navbar-nav > li.nav-item > a {
     padding: 10px 20px;
     color: #fff;
   }
   #mainNav .navbar-nav > li.nav-item > a:focus, #mainNav .navbar-nav > li.nav-item > a:hover {
-    color: #5E6775;
+    color: #BABABA;
   }
 }
 
@@ -217,7 +217,7 @@ header.masthead .site-heading .subheading {
   line-height: 1.1;
   display: block;
   margin: 10px 0 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 @media only screen and (min-width: 768px) {
@@ -241,7 +241,7 @@ header.masthead .post-heading .subheading {
   font-size: 24px;
   font-weight: 600;
   margin: 10px 0 30px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 header.masthead .post-heading .meta {
@@ -270,7 +270,7 @@ header.masthead .post-heading .meta a {
 
 .post-preview > a:focus, .post-preview > a:hover {
   text-decoration: none;
-  color: #0085A1;
+  color: #BABABA;
 }
 
 .post-preview > a > .post-title {
@@ -390,7 +390,7 @@ footer .copyright {
   letter-spacing: 1px;
   text-transform: uppercase;
   border-radius: 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .btn-primary {

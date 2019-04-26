@@ -82,7 +82,13 @@ PartyChat.propTypes = {
 
 export default withTracker((props) => {
 	const handle = Meteor.subscribe("messages");
-	const thisGroup = props.user.profile.groupID;
+	thisGroup = props.user.profile.groupID;
+	if (Meteor.user().profile.role === "Dungeon Master") {
+		if (Meteor.user().profile.members[0] === null) 
+			{ thisGroup = ""; }
+				else { thisGroup = props.user.profile.groupID; }
+	}
+	else { thisGroup = props.user.profile.groupID; }
 	return {
 		messages: Messages.find({group: thisGroup}).fetch(),
 		user: Meteor.user(),

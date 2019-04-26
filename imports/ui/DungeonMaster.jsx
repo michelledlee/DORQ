@@ -7,6 +7,8 @@ import { withTracker } from "meteor/react-meteor-data";
 import PartyChat from "./PartyChat.jsx"
 import BuildParty from "./BuildParty.jsx";
 import Generator from "./Generator.jsx";
+import Prompt from "./Prompt.jsx";
+
 
 class DungeonMaster extends Component {
   constructor(props) {
@@ -112,6 +114,7 @@ class DungeonMaster extends Component {
       <div className="col-3">
         <Generator />
       </div>
+      <div className="col-6">
       <form
         className="form-signin"
         noValidate
@@ -133,6 +136,10 @@ class DungeonMaster extends Component {
           Tweet
         </button>
       </form>
+      </div>
+      <div className="col-6">
+      <Prompt />
+      </div>
       </div>
       </div>
       );

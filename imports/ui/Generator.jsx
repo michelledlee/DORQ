@@ -35,15 +35,31 @@ class Generator extends Component {
         console.log(res);
       });
 
-    // make a string to pass the chat function
-    let rollMessage = "Rolled a " + this.state.roll + " in " + this.ability.value + ".";
-    Meteor.call("messages.insert", rollMessage, (err, res) => {
-          if (err) {
-            alert("There was error inserting check the console");
-            // console.log(err);
-            return;
-          }
-        });
+    if (this.state.roll === 0) {
+      this.state.roll++;
+    }
+
+    if (this.ability.value === "None") {
+          let rollMessage = "Rolled a " + this.state.roll + ".";
+                  Meteor.call("messages.insert", rollMessage, (err, res) => {
+              if (err) {
+                alert("There was error inserting check the console");
+                // console.log(err);
+                return;
+              }
+            });
+        }
+        else {
+        // make a string to pass the chat function
+        let rollMessage = "Rolled a " + this.state.roll + " in " + this.ability.value + ".";
+                Meteor.call("messages.insert", rollMessage, (err, res) => {
+              if (err) {
+                alert("There was error inserting check the console");
+                // console.log(err);
+                return;
+              }
+            });
+      }
   }
 
   render() {
