@@ -5,6 +5,7 @@ import "../imports/api/util.js";
 import "../imports/api/users.js";
 import "../imports/api/tweeter.js";
 import "../imports/api/prompts.js";
+import "../imports/api/dnd.js";
 import { WebApp } from 'meteor/webapp';
 WebApp.addHtmlAttributeHook(() => ({ lang: 'en' }));
 // import "../imports/api/twitter.js";

@@ -17,8 +17,8 @@ class Dashboard extends Component {
 		this.avatar = "";
 		this.role = "";
 
-		console.log(props);
-		console.log(Meteor.user());
+		// console.log(props);
+		// console.log(Meteor.user());
 		// this.user = Meteor.user();
 	}
 
