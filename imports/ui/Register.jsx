@@ -88,7 +88,7 @@ class Register extends Component {
           case "Cleric":
             abilityStats = {
               strength: 2,
-              dexterity: -1,
+              dexterity: 1,
               constitution: 2,
               intelligence: 0,
               wisdom: 3,
@@ -101,7 +101,7 @@ class Register extends Component {
               trength: 0,
               dexterity: 1,
               constitution: 3,
-              intelligence: -1,
+              intelligence: 1,
               wisdom: 5,
               charisma: 2,
               hp: 10
@@ -110,7 +110,7 @@ class Register extends Component {
           case "Fighter":
             abilityStats = {
               strength: 3,
-              dexterity: -1,
+              dexterity: 1,
               constitution: 2,
               intelligence: 0,
               wisdom: 1,
@@ -132,7 +132,7 @@ class Register extends Component {
           case "Paladin":
             abilityStats = {
               strength: 5,
-              dexterity: -1,
+              dexterity: 1,
               constitution: 2,
               intelligence: 0,
               wisdom: 1,
@@ -153,7 +153,7 @@ class Register extends Component {
             break;
           case "Rogue":
             abilityStats = {
-              strength: -1,
+              strength: 1,
               dexterity: 3,
               constitution: 1,
               intelligence: 1,
@@ -163,7 +163,7 @@ class Register extends Component {
             }
           case "Sorceror":
             abilityStats = {
-              strength: -1,
+              strength: 1,
               dexterity: 1,
               constitution: 2,
               intelligence: 0,
@@ -179,7 +179,7 @@ class Register extends Component {
               constitution: 2,
               intelligence: 3,
               wisdom: 1,
-              charisma: -1,
+              charisma: 1,
               hp: 8
             }
             break; 
@@ -190,7 +190,7 @@ class Register extends Component {
               constitution: 2,
               intelligence: 3,
               wisdom: 1,
-              charisma: -1,
+              charisma: 1,
               hp: 8
             }
             break;
@@ -245,7 +245,7 @@ class Register extends Component {
        <div className="container">
         <div className="row">
           <div className="sizebox col-lg-10 col-xl-9 mx-auto">
-          <h1>Reigister for DORQ!</h1>
+          <h1>Register for DORQ!</h1>
             <div className="card card-signin flex-row my-5">
               <div className="card-img-left d-none d-md-flex col-6" />
               <div className="card-body">

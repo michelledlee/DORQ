@@ -4,6 +4,7 @@ import "../imports/api/parties.js";
 import "../imports/api/util.js";
 import "../imports/api/users.js";
 import "../imports/api/tweeter.js";
+import "../imports/api/prompts.js";
 import { WebApp } from 'meteor/webapp';
 WebApp.addHtmlAttributeHook(() => ({ lang: 'en' }));
 // import "../imports/api/twitter.js";
@@ -25,7 +26,8 @@ const LISTS_METHODS = [
 	"tweeter.tweetBot",
 	"parties.createparty",
 	"messages.insert",
-	"messages.getgroupmessages"
+	"messages.getgroupmessages",
+	"prompts.getPrompt"
 ];
 
 // Only allow 5 list operations per connection per second

@@ -27,12 +27,20 @@ Meteor.methods({
 			throw new Meteor.Error("not-authorized");
 		}
 
+		let thisGroup;
+		if (Meteor.user().profile.role === "Dungeon Master") {
+			if (Meteor.user().profile.members[0] === null) 
+				{ thisGroup = ""; }
+					else { thisGroup = Meteor.user().profile.groupID; }
+		}
+		else { thisGroup = Meteor.user().profile.groupID; }
+
 		Messages.insert({
 			message : message,
 			createdAt : Date.now(),
 			avatar: Meteor.user().profile.avatar,
 			owner : Meteor.user().username,
-			group: Meteor.user().profile.groupID
+			group: thisGroup
 		});
 	},
 

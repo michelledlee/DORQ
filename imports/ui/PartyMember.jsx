@@ -59,7 +59,7 @@ class PartyMember extends Component {
 					<div className="col-1">
 					</div>
 					<div className="col-4">
-						<b>Character Name:</b> {this.name} <br/>
+						<b>Character Name:</b> {this.charname} <br/>
 						<b>Class:</b> {this.role}<br/>
 						<b>Status:</b> {this.groupNo != "" ? "Active" : "Not Active"}<br/>
 						<b>Level:</b> {this.level}<br />
