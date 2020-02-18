@@ -1,4 +1,4 @@
-# [DORQ - A D&D&Me App](https://UPDATELINK.COM/)
+# [DORQ - A D&D&Me App](https://dorq.herokuapp.com/)
 
 ## Website/App Objective  
 DORQ is a website for ostentatious orcs, excellent elves, and gregarious gnomes to gather together online to facilitate their quirky quests through a marvelous made-up world. Adventurers alike can register for an account as one of many exciting classes like wizards, sorcerors, and even monks! Then they can provide their top secret unique ID to a Dungeon Master to join a party. Once logged in users can play games through the interactive chat module. Dungeon Masters can use the built-in Twitter access to send out relevant news to their party members as well as provide insights into the scandalous skits that are being sketched out real time. 
